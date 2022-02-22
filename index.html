@@ -5231,6 +5231,11 @@ var $mdgriffith$elm_ui$Element$rgb255 = F3(
 		return A4($mdgriffith$elm_ui$Internal$Model$Rgba, red / 255, green / 255, blue / 255, 1);
 	});
 var $author$project$Main$background = A3($mdgriffith$elm_ui$Element$rgb255, 53, 53, 53);
+var $mdgriffith$elm_ui$Element$rgb = F3(
+	function (r, g, b) {
+		return A4($mdgriffith$elm_ui$Internal$Model$Rgba, r, g, b, 1);
+	});
+var $author$project$Main$blue = A3($mdgriffith$elm_ui$Element$rgb, 0, 0, 1);
 var $mdgriffith$elm_ui$Internal$Model$Class = F2(
 	function (a, b) {
 		return {$: 'Class', a: a, b: b};
@@ -10952,10 +10957,6 @@ var $mdgriffith$elm_ui$Element$padding = function (x) {
 			f,
 			f));
 };
-var $mdgriffith$elm_ui$Element$rgb = F3(
-	function (r, g, b) {
-		return A4($mdgriffith$elm_ui$Internal$Model$Rgba, r, g, b, 1);
-	});
 var $mdgriffith$elm_ui$Internal$Flag$borderRound = $mdgriffith$elm_ui$Internal$Flag$flag(17);
 var $mdgriffith$elm_ui$Element$Border$rounded = function (radius) {
 	return A2(
@@ -11952,6 +11953,8 @@ var $mdgriffith$elm_ui$Element$paddingEach = function (_v0) {
 	}
 };
 var $elm$core$Basics$pi = _Basics_pi;
+var $author$project$Main$purple = A3($mdgriffith$elm_ui$Element$rgb, 1, 0, 1);
+var $author$project$Main$red = A3($mdgriffith$elm_ui$Element$rgb, 1, 0, 0);
 var $mdgriffith$elm_ui$Internal$Model$Padding = F5(
 	function (a, b, c, d, e) {
 		return {$: 'Padding', a: a, b: b, c: c, d: d, e: e};
@@ -12142,6 +12145,7 @@ var $mdgriffith$elm_ui$Element$wrappedRow = F2(
 			}
 		}
 	});
+var $author$project$Main$yellow = A3($mdgriffith$elm_ui$Element$rgb255, 255, 242, 0);
 var $author$project$Main$view = function (model) {
 	return A2(
 		$mdgriffith$elm_ui$Element$layout,
@@ -12225,9 +12229,19 @@ var $author$project$Main$view = function (model) {
 											_Utils_Tuple2('https://account.meraki.com/secure/login/dashboard_login', 'Meraki')),
 											A3(
 											$author$project$Main$customButton,
+											$author$project$Main$purple,
+											_List_Nil,
+											_Utils_Tuple2('https://teams.microsoft.com/', 'Teams')),
+											A3(
+											$author$project$Main$customButton,
 											$author$project$Main$white,
 											_List_Nil,
 											_Utils_Tuple2('https://school.apple.com/', 'ASM')),
+											A3(
+											$author$project$Main$customButton,
+											$author$project$Main$white,
+											_List_Nil,
+											_Utils_Tuple2('http://rewordify.com/schoolclock.php?p=08:45=1st%20Period;09:29=Passing%20Period;09:34=2nd%20Period;10:18=Passing%20Period;10:23=3rd%20Period;11:07=Passing%20Period;11:12=4th%20Period%20A%20Lunch;11:42=Passing%20Period;11:47=4th%20Period%20B%20Lunch;12:17=Passing%20Period;12:22=4th%20Period%20C%20Lunch;12:52=Passing%20Period;12:57=4th%20Period%20D%20Lunch;13:27=Passing%20Period;13:32=5th%20Period;14:16=Passing%20Period%20;14:21=6th%20Period;15:05=Passing%20Period;15:10=7th%20Period;15:55=End%20of%20School%20Day', 'Bell Schedule')),
 											A3(
 											$author$project$Main$customButton,
 											A3($mdgriffith$elm_ui$Element$rgb255, 0, 73, 137),
@@ -12237,21 +12251,95 @@ var $author$project$Main$view = function (model) {
 											$author$project$Main$customButton,
 											$author$project$Main$white,
 											_List_Nil,
-											_Utils_Tuple2('http://rewordify.com/schoolclock.php?p=08:45=1st%20Period;09:29=Passing%20Period;09:34=2nd%20Period;10:18=Passing%20Period;10:23=3rd%20Period;11:07=Passing%20Period;11:12=4th%20Period%20A%20Lunch;11:42=Passing%20Period;11:47=4th%20Period%20B%20Lunch;12:17=Passing%20Period;12:22=4th%20Period%20C%20Lunch;12:52=Passing%20Period;12:57=4th%20Period%20D%20Lunch;13:27=Passing%20Period;13:32=5th%20Period;14:16=Passing%20Period%20;14:21=6th%20Period;15:05=Passing%20Period;15:10=7th%20Period;15:55=End%20of%20School%20Day', 'Bell Schedule')),
-											A3(
-											$author$project$Main$customButton,
-											A3($mdgriffith$elm_ui$Element$rgb255, 112, 56, 149),
-											_List_Nil,
-											_Utils_Tuple2('https://www.marion.k12.in.us/', 'MCS Website')),
-											A3(
-											$author$project$Main$customButton,
-											A3($mdgriffith$elm_ui$Element$rgb255, 112, 56, 149),
-											_List_Nil,
 											_Utils_Tuple2('https://www.securly.com/ssl', 'Securly'))
 										])),
 									A3(
 									$author$project$Main$columnGroup,
-									'Tools',
+									'Google',
+									_List_Nil,
+									_List_fromArray(
+										[
+											A3(
+											$author$project$Main$customButton,
+											$author$project$Main$red,
+											_List_Nil,
+											_Utils_Tuple2('https://mail.google.com/mail/u/0/?tab=om', 'Gmail')),
+											A3(
+											$author$project$Main$customButton,
+											$author$project$Main$green,
+											_List_Nil,
+											_Utils_Tuple2('https://docs.google.com/spreadsheets/u/0/?tgif=d', 'Sheets')),
+											A3(
+											$author$project$Main$customButton,
+											$author$project$Main$blue,
+											_List_Nil,
+											_Utils_Tuple2('https://remotedesktop.google.com', 'Remote Desktop')),
+											A3(
+											$author$project$Main$customButton,
+											$author$project$Main$green,
+											_List_Nil,
+											_Utils_Tuple2('https://script.google.com/home', 'Google Scripts')),
+											A3(
+											$author$project$Main$customButton,
+											$author$project$Main$yellow,
+											_List_Nil,
+											_Utils_Tuple2('https://drive.google.com/drive/my-drive', 'Drive')),
+											A3(
+											$author$project$Main$customButton,
+											$author$project$Main$purple,
+											_List_Nil,
+											_Utils_Tuple2('https://docs.google.com/forms/u/0/?tgif=d', 'Forms')),
+											A3(
+											$author$project$Main$customButton,
+											$author$project$Main$yellow,
+											_List_Nil,
+											_Utils_Tuple2('https://keep.google.com/', 'Keep')),
+											A3(
+											$author$project$Main$customButton,
+											$author$project$Main$red,
+											_List_Nil,
+											_Utils_Tuple2('https://youtube.com', 'Youtube')),
+											A3(
+											$author$project$Main$customButton,
+											$author$project$Main$blue,
+											_List_Nil,
+											_Utils_Tuple2('https://calendar.google.com', 'Calendar'))
+										])),
+									A3(
+									$author$project$Main$columnGroup,
+									'Forms',
+									_List_Nil,
+									_List_fromArray(
+										[
+											A4($author$project$Main$gFormButton, 'Broken Devices', 'https://docs.google.com/forms/d/1DwX5plI2xesETjL3VyjEsORsjPuQomNs6c-z6_rgub0/edit', 'https://docs.google.com/forms/d/e/1FAIpQLSeehgnL7ECuuTB8Lc90KhbvTiCkbcfYIwqk0ndQf1fXo6MZYA/viewform', 'https://docs.google.com/spreadsheets/d/1JHvC6oJPe9ct4ni6exz9356JJljuwMl7Cqvuqz_lHHk/edit?resourcekey&usp=forms_web_b#gid=891156127'),
+											A4($author$project$Main$gFormButton, 'Device Handout', 'https://docs.google.com/forms/d/12oNEJzlib5frTENGnb5udR9Atu_5aeQoSlsbsJA80vc/edit', 'https://docs.google.com/forms/d/e/1FAIpQLSe4wh0CVTlHxpWUQk_K_MnaQiclBOp32KX7W4GObv6uAH4vuA/viewform', 'https://docs.google.com/spreadsheets/d/1UIH0hnJ4N4lB8mGSyfXGj3FN5sBHznvNIuRQ7KIQv1o/edit?resourcekey#gid=321741282'),
+											A4($author$project$Main$gFormButton, 'Walk In Log', 'https://docs.google.com/forms/d/1ITV5K51CwKdKoSazlV571L37dT6jqQQEo4MkPeh15ac/edit', 'https://docs.google.com/forms/d/e/1FAIpQLSeEe-QPGAE3CtgTzUWorTu94iJoi7gbVY5A0XP52qgEWKGTzw/viewform', 'https://docs.google.com/spreadsheets/d/16vGM6RKuxct6UPTQVwm6Pz5Z0S9J_KbdH5lNVCn7p2A/edit?resourcekey#gid=1955851019')
+										])),
+									A3(
+									$author$project$Main$columnGroup,
+									'Common Docs',
+									_List_Nil,
+									_List_fromArray(
+										[
+											A3(
+											$author$project$Main$customButton,
+											A3($mdgriffith$elm_ui$Element$rgb255, 0, 200, 200),
+											_List_Nil,
+											_Utils_Tuple2('https://docs.google.com/spreadsheets/d/1RURMy0InlA1olMFZ84nSdlZbs3UdZ8gIB13HzxtsONo/edit#gid=0', 'Serial # Tracking')),
+											A3(
+											$author$project$Main$customButton,
+											A3($mdgriffith$elm_ui$Element$rgb255, 0, 73, 137),
+											_List_Nil,
+											_Utils_Tuple2('https://docs.google.com/spreadsheets/d/1Cj9UtyQ2--4-qeNi1ZDJOxy1HO3WeZz9z8g4SrTyl6M/edit#gid=0', 'JDB + Repair Form')),
+											A3(
+											$author$project$Main$customButton,
+											A3($mdgriffith$elm_ui$Element$rgb255, 0, 200, 200),
+											_List_Nil,
+											_Utils_Tuple2('https://docs.google.com/spreadsheets/d/1LNlsKzwp2Xto2fCqNA--mEfs5XZ2hnEYb8wJvrrTv0Q/edit#gid=0', 'Hallway Sweep'))
+										])),
+									A3(
+									$author$project$Main$columnGroup,
+									'Helpful Tools',
 									_List_Nil,
 									_List_fromArray(
 										[
@@ -12262,14 +12350,9 @@ var $author$project$Main$view = function (model) {
 											_Utils_Tuple2('https://trello.com/b/DhCrKPFp/autoloader', 'Trello')),
 											A3(
 											$author$project$Main$customButton,
-											A3($mdgriffith$elm_ui$Element$rgb255, 0, 1, 0),
+											$author$project$Main$green,
 											_List_Nil,
-											_Utils_Tuple2('https://script.google.com/home', 'Google Scripts')),
-											A3(
-											$author$project$Main$customButton,
-											A3($mdgriffith$elm_ui$Element$rgb255, 0, 200, 200),
-											_List_Nil,
-											_Utils_Tuple2('https://remotedesktop.google.com', 'Remote Desktop')),
+											_Utils_Tuple2('https://github.com/', 'GitHub')),
 											A3(
 											$author$project$Main$customButton,
 											A3($mdgriffith$elm_ui$Element$rgb255, 0, 122, 204),
@@ -12279,16 +12362,16 @@ var $author$project$Main$view = function (model) {
 											$author$project$Main$customButton,
 											$author$project$Main$green,
 											_List_Nil,
-											_Utils_Tuple2('https://github.com/', 'GitHub')),
+											_Utils_Tuple2('https://www.w3schools.com/colors/colors_picker.asp', 'W3 Color Picker')),
 											A3(
 											$author$project$Main$customButton,
-											$author$project$Main$green,
+											$author$project$Main$blue,
 											_List_Nil,
-											_Utils_Tuple2('https://www.w3schools.com/colors/colors_picker.asp', 'W3 Color Picker'))
+											_Utils_Tuple2('https://package.elm-lang.org/packages/mdgriffith/elm-ui/latest/', 'Elm-ui'))
 										])),
 									A3(
 									$author$project$Main$columnGroup,
-									'Google',
+									'Employee Links',
 									_List_Nil,
 									_List_fromArray(
 										[
@@ -12296,53 +12379,17 @@ var $author$project$Main$view = function (model) {
 											$author$project$Main$customButton,
 											A3($mdgriffith$elm_ui$Element$rgb255, 0, 200, 200),
 											_List_Nil,
-											_Utils_Tuple2('https://mail.google.com/mail/u/0/?tab=om', 'Gmail')),
+											_Utils_Tuple2('https://www.marion.k12.in.us/', 'MCS Website')),
+											A3(
+											$author$project$Main$customButton,
+											A3($mdgriffith$elm_ui$Element$rgb255, 0, 73, 137),
+											_List_Nil,
+											_Utils_Tuple2('https://310859.tcplusondemand.com/app/webclock/#/EmployeeLogOn/310859', 'Timeclock +')),
 											A3(
 											$author$project$Main$customButton,
 											A3($mdgriffith$elm_ui$Element$rgb255, 0, 200, 200),
 											_List_Nil,
-											_Utils_Tuple2('https://drive.google.com/drive/my-drive', 'Drive')),
-											A3(
-											$author$project$Main$customButton,
-											A3($mdgriffith$elm_ui$Element$rgb255, 0, 200, 200),
-											_List_Nil,
-											_Utils_Tuple2('https://docs.google.com/spreadsheets/u/0/?tgif=d', 'Sheets')),
-											A3(
-											$author$project$Main$customButton,
-											A3($mdgriffith$elm_ui$Element$rgb255, 0, 200, 200),
-											_List_Nil,
-											_Utils_Tuple2('https://docs.google.com/document/u/0/?tgif=c', 'Docs')),
-											A3(
-											$author$project$Main$customButton,
-											A3($mdgriffith$elm_ui$Element$rgb255, 0, 200, 200),
-											_List_Nil,
-											_Utils_Tuple2('https://docs.google.com/forms/u/0/?tgif=d', 'Forms')),
-											A3(
-											$author$project$Main$customButton,
-											A3($mdgriffith$elm_ui$Element$rgb255, 0, 200, 200),
-											_List_Nil,
-											_Utils_Tuple2('https://keep.google.com/', 'Keep')),
-											A3(
-											$author$project$Main$customButton,
-											A3($mdgriffith$elm_ui$Element$rgb255, 0, 200, 200),
-											_List_Nil,
-											_Utils_Tuple2('https://calendar.google.com', 'Calendar')),
-											A3(
-											$author$project$Main$customButton,
-											A3($mdgriffith$elm_ui$Element$rgb255, 0, 200, 200),
-											_List_Nil,
-											_Utils_Tuple2('https://contacts.google.com/directory?hl=en', 'Contacts'))
-										])),
-									A3(
-									$author$project$Main$columnGroup,
-									'Forms',
-									_List_Nil,
-									_List_fromArray(
-										[
-											A4($author$project$Main$gFormButton, 'Broken Devices', 'https://docs.google.com/forms/d/1DwX5plI2xesETjL3VyjEsORsjPuQomNs6c-z6_rgub0/edit', 'https://docs.google.com/forms/d/e/1FAIpQLSeehgnL7ECuuTB8Lc90KhbvTiCkbcfYIwqk0ndQf1fXo6MZYA/viewform', 'https://docs.google.com/spreadsheets/d/1JHvC6oJPe9ct4ni6exz9356JJljuwMl7Cqvuqz_lHHk/edit?resourcekey&usp=forms_web_b#gid=891156127'),
-											A4($author$project$Main$gFormButton, 'Device Handout', 'https://docs.google.com/forms/d/12oNEJzlib5frTENGnb5udR9Atu_5aeQoSlsbsJA80vc/edit', 'https://docs.google.com/forms/d/e/1FAIpQLSe4wh0CVTlHxpWUQk_K_MnaQiclBOp32KX7W4GObv6uAH4vuA/viewform', 'https://docs.google.com/spreadsheets/d/1UIH0hnJ4N4lB8mGSyfXGj3FN5sBHznvNIuRQ7KIQv1o/edit?resourcekey#gid=321741282'),
-											A4($author$project$Main$gFormButton, 'Walk In Log', 'https://docs.google.com/forms/d/1ITV5K51CwKdKoSazlV571L37dT6jqQQEo4MkPeh15ac/edit', 'https://docs.google.com/forms/d/e/1FAIpQLSeEe-QPGAE3CtgTzUWorTu94iJoi7gbVY5A0XP52qgEWKGTzw/viewform', 'https://docs.google.com/spreadsheets/d/16vGM6RKuxct6UPTQVwm6Pz5Z0S9J_KbdH5lNVCn7p2A/edit?resourcekey#gid=1955851019'),
-											A4($author$project$Main$gFormButton, 'C.O.E.', 'https://docs.google.com/forms/d/11QqtirXcOfDOqRoB-SJTIMnoDJCcOQ2P1goP4SVqXuU/edit', 'https://docs.google.com/forms/d/e/1FAIpQLSeWUt7PXi0DeyraeXsibifvj9DKcn1FfKvsxcgmjp7qGV0Fgw/viewform', 'https://docs.google.com/spreadsheets/d/1l3XOiPrdwYhZ1y_jeu4KkYhSY0IPBub85spyPPh4QGc/edit?resourcekey#gid=1080559774')
+											_Utils_Tuple2('https://marion.k12-portal.in/login.php', 'Paystubs'))
 										]))
 								]))
 						]))
