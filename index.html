@@ -10946,6 +10946,48 @@ var $mdgriffith$elm_ui$Internal$Model$Fill = function (a) {
 };
 var $mdgriffith$elm_ui$Element$fill = $mdgriffith$elm_ui$Internal$Model$Fill(1);
 var $author$project$Main$gold = A3($mdgriffith$elm_ui$Element$rgb255, 244, 182, 44);
+var $mdgriffith$elm_ui$Internal$Model$NoAttribute = {$: 'NoAttribute'};
+var $mdgriffith$elm_ui$Internal$Flag$bgGradient = $mdgriffith$elm_ui$Internal$Flag$flag(10);
+var $mdgriffith$elm_ui$Element$Background$gradient = function (_v0) {
+	var angle = _v0.angle;
+	var steps = _v0.steps;
+	if (!steps.b) {
+		return $mdgriffith$elm_ui$Internal$Model$NoAttribute;
+	} else {
+		if (!steps.b.b) {
+			var clr = steps.a;
+			return A2(
+				$mdgriffith$elm_ui$Internal$Model$StyleClass,
+				$mdgriffith$elm_ui$Internal$Flag$bgColor,
+				A3(
+					$mdgriffith$elm_ui$Internal$Model$Colored,
+					'bg-' + $mdgriffith$elm_ui$Internal$Model$formatColorClass(clr),
+					'background-color',
+					clr));
+		} else {
+			return A2(
+				$mdgriffith$elm_ui$Internal$Model$StyleClass,
+				$mdgriffith$elm_ui$Internal$Flag$bgGradient,
+				A3(
+					$mdgriffith$elm_ui$Internal$Model$Single,
+					'bg-grad-' + A2(
+						$elm$core$String$join,
+						'-',
+						A2(
+							$elm$core$List$cons,
+							$mdgriffith$elm_ui$Internal$Model$floatClass(angle),
+							A2($elm$core$List$map, $mdgriffith$elm_ui$Internal$Model$formatColorClass, steps))),
+					'background-image',
+					'linear-gradient(' + (A2(
+						$elm$core$String$join,
+						', ',
+						A2(
+							$elm$core$List$cons,
+							$elm$core$String$fromFloat(angle) + 'rad',
+							A2($elm$core$List$map, $mdgriffith$elm_ui$Internal$Model$formatColor, steps))) + ')')));
+		}
+	}
+};
 var $author$project$Main$grey = function (y) {
 	return A3($mdgriffith$elm_ui$Element$rgb255, y, y, y);
 };
@@ -11135,6 +11177,17 @@ var $author$project$Main$columnGroup = F3(
 						$mdgriffith$elm_ui$Element$height($mdgriffith$elm_ui$Element$fill),
 						$mdgriffith$elm_ui$Element$Background$color(
 						A3($mdgriffith$elm_ui$Element$rgb255, 41, 35, 47)),
+						$mdgriffith$elm_ui$Element$Background$gradient(
+						{
+							angle: 4.1132,
+							steps: _List_fromArray(
+								[
+									A3($mdgriffith$elm_ui$Element$rgb255, 41, 35, 47),
+									A3($mdgriffith$elm_ui$Element$rgb255, 41, 35, 47),
+									A3($mdgriffith$elm_ui$Element$rgb255, 41, 35, 47),
+									$author$project$Main$grey(30)
+								])
+						}),
 						$mdgriffith$elm_ui$Element$Border$rounded(10),
 						$mdgriffith$elm_ui$Element$Font$shadow(
 						{
@@ -11221,7 +11274,6 @@ var $mdgriffith$elm_ui$Internal$Model$Nearby = F2(
 	function (a, b) {
 		return {$: 'Nearby', a: a, b: b};
 	});
-var $mdgriffith$elm_ui$Internal$Model$NoAttribute = {$: 'NoAttribute'};
 var $mdgriffith$elm_ui$Internal$Model$TransformComponent = F2(
 	function (a, b) {
 		return {$: 'TransformComponent', a: a, b: b};
@@ -11361,47 +11413,6 @@ var $author$project$Main$glowOnHover = $mdgriffith$elm_ui$Element$mouseOver(
 			A2($mdgriffith$elm_ui$Element$Font$glow, $author$project$Main$black, 5),
 			$mdgriffith$elm_ui$Element$Font$color($author$project$Main$gold)
 		]));
-var $mdgriffith$elm_ui$Internal$Flag$bgGradient = $mdgriffith$elm_ui$Internal$Flag$flag(10);
-var $mdgriffith$elm_ui$Element$Background$gradient = function (_v0) {
-	var angle = _v0.angle;
-	var steps = _v0.steps;
-	if (!steps.b) {
-		return $mdgriffith$elm_ui$Internal$Model$NoAttribute;
-	} else {
-		if (!steps.b.b) {
-			var clr = steps.a;
-			return A2(
-				$mdgriffith$elm_ui$Internal$Model$StyleClass,
-				$mdgriffith$elm_ui$Internal$Flag$bgColor,
-				A3(
-					$mdgriffith$elm_ui$Internal$Model$Colored,
-					'bg-' + $mdgriffith$elm_ui$Internal$Model$formatColorClass(clr),
-					'background-color',
-					clr));
-		} else {
-			return A2(
-				$mdgriffith$elm_ui$Internal$Model$StyleClass,
-				$mdgriffith$elm_ui$Internal$Flag$bgGradient,
-				A3(
-					$mdgriffith$elm_ui$Internal$Model$Single,
-					'bg-grad-' + A2(
-						$elm$core$String$join,
-						'-',
-						A2(
-							$elm$core$List$cons,
-							$mdgriffith$elm_ui$Internal$Model$floatClass(angle),
-							A2($elm$core$List$map, $mdgriffith$elm_ui$Internal$Model$formatColorClass, steps))),
-					'background-image',
-					'linear-gradient(' + (A2(
-						$elm$core$String$join,
-						', ',
-						A2(
-							$elm$core$List$cons,
-							$elm$core$String$fromFloat(angle) + 'rad',
-							A2($elm$core$List$map, $mdgriffith$elm_ui$Internal$Model$formatColor, steps))) + ')')));
-		}
-	}
-};
 var $elm$html$Html$Attributes$href = function (url) {
 	return A2(
 		$elm$html$Html$Attributes$stringProperty,
