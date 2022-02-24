@@ -11192,48 +11192,22 @@ var $author$project$Main$columnGroup = F3(
 				]));
 	});
 var $author$project$Main$buttonColor = $author$project$Main$grey(65);
-var $mdgriffith$elm_ui$Internal$Model$NoAttribute = {$: 'NoAttribute'};
-var $mdgriffith$elm_ui$Internal$Flag$bgGradient = $mdgriffith$elm_ui$Internal$Flag$flag(10);
-var $mdgriffith$elm_ui$Element$Background$gradient = function (_v0) {
-	var angle = _v0.angle;
-	var steps = _v0.steps;
-	if (!steps.b) {
-		return $mdgriffith$elm_ui$Internal$Model$NoAttribute;
-	} else {
-		if (!steps.b.b) {
-			var clr = steps.a;
-			return A2(
-				$mdgriffith$elm_ui$Internal$Model$StyleClass,
-				$mdgriffith$elm_ui$Internal$Flag$bgColor,
-				A3(
-					$mdgriffith$elm_ui$Internal$Model$Colored,
-					'bg-' + $mdgriffith$elm_ui$Internal$Model$formatColorClass(clr),
-					'background-color',
-					clr));
-		} else {
-			return A2(
-				$mdgriffith$elm_ui$Internal$Model$StyleClass,
-				$mdgriffith$elm_ui$Internal$Flag$bgGradient,
-				A3(
-					$mdgriffith$elm_ui$Internal$Model$Single,
-					'bg-grad-' + A2(
-						$elm$core$String$join,
-						'-',
-						A2(
-							$elm$core$List$cons,
-							$mdgriffith$elm_ui$Internal$Model$floatClass(angle),
-							A2($elm$core$List$map, $mdgriffith$elm_ui$Internal$Model$formatColorClass, steps))),
-					'background-image',
-					'linear-gradient(' + (A2(
-						$elm$core$String$join,
-						', ',
-						A2(
-							$elm$core$List$cons,
-							$elm$core$String$fromFloat(angle) + 'rad',
-							A2($elm$core$List$map, $mdgriffith$elm_ui$Internal$Model$formatColor, steps))) + ')')));
-		}
-	}
-};
+var $mdgriffith$elm_ui$Element$Font$glow = F2(
+	function (clr, i) {
+		var shade = {
+			blur: i * 2,
+			color: clr,
+			offset: _Utils_Tuple2(0, 0)
+		};
+		return A2(
+			$mdgriffith$elm_ui$Internal$Model$StyleClass,
+			$mdgriffith$elm_ui$Internal$Flag$txtShadows,
+			A3(
+				$mdgriffith$elm_ui$Internal$Model$Single,
+				$mdgriffith$elm_ui$Internal$Model$textShadowClass(shade),
+				'text-shadow',
+				$mdgriffith$elm_ui$Internal$Model$formatTextShadow(shade)));
+	});
 var $mdgriffith$elm_ui$Internal$Model$Hover = {$: 'Hover'};
 var $mdgriffith$elm_ui$Internal$Model$PseudoSelector = F2(
 	function (a, b) {
@@ -11247,6 +11221,7 @@ var $mdgriffith$elm_ui$Internal$Model$Nearby = F2(
 	function (a, b) {
 		return {$: 'Nearby', a: a, b: b};
 	});
+var $mdgriffith$elm_ui$Internal$Model$NoAttribute = {$: 'NoAttribute'};
 var $mdgriffith$elm_ui$Internal$Model$TransformComponent = F2(
 	function (a, b) {
 		return {$: 'TransformComponent', a: a, b: b};
@@ -11380,6 +11355,53 @@ var $mdgriffith$elm_ui$Element$mouseOver = function (decs) {
 			$mdgriffith$elm_ui$Internal$Model$Hover,
 			$mdgriffith$elm_ui$Internal$Model$unwrapDecorations(decs)));
 };
+var $author$project$Main$glowOnHover = $mdgriffith$elm_ui$Element$mouseOver(
+	_List_fromArray(
+		[
+			A2($mdgriffith$elm_ui$Element$Font$glow, $author$project$Main$black, 5),
+			$mdgriffith$elm_ui$Element$Font$color($author$project$Main$gold)
+		]));
+var $mdgriffith$elm_ui$Internal$Flag$bgGradient = $mdgriffith$elm_ui$Internal$Flag$flag(10);
+var $mdgriffith$elm_ui$Element$Background$gradient = function (_v0) {
+	var angle = _v0.angle;
+	var steps = _v0.steps;
+	if (!steps.b) {
+		return $mdgriffith$elm_ui$Internal$Model$NoAttribute;
+	} else {
+		if (!steps.b.b) {
+			var clr = steps.a;
+			return A2(
+				$mdgriffith$elm_ui$Internal$Model$StyleClass,
+				$mdgriffith$elm_ui$Internal$Flag$bgColor,
+				A3(
+					$mdgriffith$elm_ui$Internal$Model$Colored,
+					'bg-' + $mdgriffith$elm_ui$Internal$Model$formatColorClass(clr),
+					'background-color',
+					clr));
+		} else {
+			return A2(
+				$mdgriffith$elm_ui$Internal$Model$StyleClass,
+				$mdgriffith$elm_ui$Internal$Flag$bgGradient,
+				A3(
+					$mdgriffith$elm_ui$Internal$Model$Single,
+					'bg-grad-' + A2(
+						$elm$core$String$join,
+						'-',
+						A2(
+							$elm$core$List$cons,
+							$mdgriffith$elm_ui$Internal$Model$floatClass(angle),
+							A2($elm$core$List$map, $mdgriffith$elm_ui$Internal$Model$formatColorClass, steps))),
+					'background-image',
+					'linear-gradient(' + (A2(
+						$elm$core$String$join,
+						', ',
+						A2(
+							$elm$core$List$cons,
+							$elm$core$String$fromFloat(angle) + 'rad',
+							A2($elm$core$List$map, $mdgriffith$elm_ui$Internal$Model$formatColor, steps))) + ')')));
+		}
+	}
+};
 var $elm$html$Html$Attributes$href = function (url) {
 	return A2(
 		$elm$html$Html$Attributes$stringProperty,
@@ -11426,47 +11448,6 @@ var $mdgriffith$elm_ui$Internal$Model$Px = function (a) {
 	return {$: 'Px', a: a};
 };
 var $mdgriffith$elm_ui$Element$px = $mdgriffith$elm_ui$Internal$Model$Px;
-var $author$project$Main$customButton = F3(
-	function (lineColor, attr, link) {
-		var url = link.a;
-		var labelText = link.b;
-		var label = A2(
-			$mdgriffith$elm_ui$Element$el,
-			_List_fromArray(
-				[$mdgriffith$elm_ui$Element$centerX]),
-			$mdgriffith$elm_ui$Element$text(labelText));
-		return A2(
-			$mdgriffith$elm_ui$Element$newTabLink,
-			_Utils_ap(
-				_List_fromArray(
-					[
-						$mdgriffith$elm_ui$Element$Background$gradient(
-						{
-							angle: 0,
-							steps: $elm$core$List$reverse(
-								_List_fromArray(
-									[lineColor, $author$project$Main$buttonColor, $author$project$Main$buttonColor, $author$project$Main$buttonColor, $author$project$Main$buttonColor, $author$project$Main$buttonColor]))
-						}),
-						$mdgriffith$elm_ui$Element$paddingEach(
-						{bottom: 15, left: 15, right: 15, top: 23}),
-						$mdgriffith$elm_ui$Element$Border$rounded(8),
-						$mdgriffith$elm_ui$Element$mouseOver(_List_Nil),
-						$mdgriffith$elm_ui$Element$Font$color(
-						A3($mdgriffith$elm_ui$Element$rgb, 1, 1, 1)),
-						$mdgriffith$elm_ui$Element$width(
-						$mdgriffith$elm_ui$Element$px(250)),
-						$mdgriffith$elm_ui$Element$Border$shadow(
-						{
-							blur: 3,
-							color: A3($mdgriffith$elm_ui$Element$rgb, 0, 0, 0),
-							offset: _Utils_Tuple2(1, 4),
-							size: 1.5
-						}),
-						$mdgriffith$elm_ui$Element$Font$bold
-					]),
-				attr),
-			{label: label, url: url});
-	});
 var $mdgriffith$elm_ui$Internal$Model$AsRow = {$: 'AsRow'};
 var $mdgriffith$elm_ui$Internal$Model$asRow = $mdgriffith$elm_ui$Internal$Model$AsRow;
 var $mdgriffith$elm_ui$Element$row = F2(
@@ -11486,6 +11467,73 @@ var $mdgriffith$elm_ui$Element$row = F2(
 						$mdgriffith$elm_ui$Element$height($mdgriffith$elm_ui$Element$shrink),
 						attrs))),
 			$mdgriffith$elm_ui$Internal$Model$Unkeyed(children));
+	});
+var $author$project$Main$customButton = F4(
+	function (icon, lineColor, attr, link) {
+		var url = link.a;
+		var labelText = link.b;
+		var label = A2(
+			$mdgriffith$elm_ui$Element$row,
+			_List_fromArray(
+				[
+					$mdgriffith$elm_ui$Element$spacing(20)
+				]),
+			_List_fromArray(
+				[
+					A2(
+					$mdgriffith$elm_ui$Element$el,
+					_List_fromArray(
+						[
+							A2($mdgriffith$elm_ui$Element$paddingXY, 5, 15),
+							$mdgriffith$elm_ui$Element$height($mdgriffith$elm_ui$Element$fill),
+							$mdgriffith$elm_ui$Element$Background$color(
+							$author$project$Main$grey(100)),
+							$mdgriffith$elm_ui$Element$Border$shadow(
+							{
+								blur: 3,
+								color: $author$project$Main$grey(30),
+								offset: _Utils_Tuple2(1, 0),
+								size: 1
+							}),
+							$mdgriffith$elm_ui$Element$Border$roundEach(
+							{bottomLeft: 8, bottomRight: 0, topLeft: 0, topRight: 0})
+						]),
+					$mdgriffith$elm_ui$Element$text(icon)),
+					A2(
+					$mdgriffith$elm_ui$Element$el,
+					_List_fromArray(
+						[$mdgriffith$elm_ui$Element$centerX]),
+					$mdgriffith$elm_ui$Element$text(labelText))
+				]));
+		return A2(
+			$mdgriffith$elm_ui$Element$newTabLink,
+			_Utils_ap(
+				_List_fromArray(
+					[
+						$mdgriffith$elm_ui$Element$Background$gradient(
+						{
+							angle: 0,
+							steps: $elm$core$List$reverse(
+								_List_fromArray(
+									[lineColor, $author$project$Main$buttonColor, $author$project$Main$buttonColor, $author$project$Main$buttonColor, $author$project$Main$buttonColor, $author$project$Main$buttonColor]))
+						}),
+						$mdgriffith$elm_ui$Element$Border$rounded(8),
+						$author$project$Main$glowOnHover,
+						$mdgriffith$elm_ui$Element$Font$color(
+						A3($mdgriffith$elm_ui$Element$rgb, 1, 1, 1)),
+						$mdgriffith$elm_ui$Element$width(
+						$mdgriffith$elm_ui$Element$px(250)),
+						$mdgriffith$elm_ui$Element$Border$shadow(
+						{
+							blur: 3,
+							color: A3($mdgriffith$elm_ui$Element$rgb, 0, 0, 0),
+							offset: _Utils_Tuple2(1, 4),
+							size: 1.5
+						}),
+						$mdgriffith$elm_ui$Element$Font$bold
+					]),
+				attr),
+			{label: label, url: url});
 	});
 var $mdgriffith$elm_ui$Internal$Model$FontSize = function (a) {
 	return {$: 'FontSize', a: a};
@@ -11532,6 +11580,7 @@ var $author$project$Main$gFormButton = F4(
 					$mdgriffith$elm_ui$Element$Border$rounded(8),
 					$mdgriffith$elm_ui$Element$Font$color(
 					A3($mdgriffith$elm_ui$Element$rgb, 1, 1, 1)),
+					$author$project$Main$glowOnHover,
 					$mdgriffith$elm_ui$Element$paddingEach(
 					{bottom: 15, left: 15, right: 15, top: 18}),
 					$mdgriffith$elm_ui$Element$width(
@@ -11717,7 +11766,8 @@ var $author$project$Main$jamfButton = A2(
 					_List_fromArray(
 						[
 							$mdgriffith$elm_ui$Element$width($mdgriffith$elm_ui$Element$fill),
-							$mdgriffith$elm_ui$Element$height($mdgriffith$elm_ui$Element$fill)
+							$mdgriffith$elm_ui$Element$height($mdgriffith$elm_ui$Element$fill),
+							$author$project$Main$glowOnHover
 						]),
 					{
 						label: A2(
@@ -11741,7 +11791,8 @@ var $author$project$Main$jamfButton = A2(
 					_List_fromArray(
 						[
 							$mdgriffith$elm_ui$Element$width($mdgriffith$elm_ui$Element$fill),
-							$mdgriffith$elm_ui$Element$height($mdgriffith$elm_ui$Element$fill)
+							$mdgriffith$elm_ui$Element$height($mdgriffith$elm_ui$Element$fill),
+							$author$project$Main$glowOnHover
 						]),
 					{
 						label: A2(
@@ -11762,7 +11813,8 @@ var $author$project$Main$jamfButton = A2(
 					_List_fromArray(
 						[
 							$mdgriffith$elm_ui$Element$width($mdgriffith$elm_ui$Element$fill),
-							$mdgriffith$elm_ui$Element$height($mdgriffith$elm_ui$Element$fill)
+							$mdgriffith$elm_ui$Element$height($mdgriffith$elm_ui$Element$fill),
+							$author$project$Main$glowOnHover
 						]),
 					{
 						label: A2(
@@ -12322,43 +12374,51 @@ var $author$project$Main$view = function (model) {
 									_List_fromArray(
 										[
 											$author$project$Main$jamfButton,
-											A3(
+											A4(
 											$author$project$Main$customButton,
+											'🎟️',
 											A3($mdgriffith$elm_ui$Element$rgb255, 249, 157, 28),
 											_List_Nil,
 											_Utils_Tuple2('https://support.marion.k12.in.us/incidents?report_id=9396281', 'Solarwinds')),
-											A3(
+											A4(
 											$author$project$Main$customButton,
+											'🍏',
 											A3($mdgriffith$elm_ui$Element$rgb255, 146, 200, 62),
 											_List_Nil,
 											_Utils_Tuple2('https://accounts.google.com/o/saml2/initsso?idpid=C037o58r8&spid=353300859042&forceauthn=false', 'Infinite Campus')),
-											A3(
+											A4(
 											$author$project$Main$customButton,
+											'📶',
 											A3($mdgriffith$elm_ui$Element$rgb255, 103, 179, 70),
 											_List_Nil,
 											_Utils_Tuple2('https://account.meraki.com/secure/login/dashboard_login', 'Meraki')),
-											A3(
+											A4(
 											$author$project$Main$customButton,
+											'👥',
 											$author$project$Main$purple,
 											_List_Nil,
 											_Utils_Tuple2('https://teams.microsoft.com/', 'Teams')),
-											A3(
+											A4(
 											$author$project$Main$customButton,
+											'🍎',
 											$author$project$Main$white,
 											_List_Nil,
 											_Utils_Tuple2('https://school.apple.com/', 'ASM')),
-											A3(
+											A4(
 											$author$project$Main$customButton,
+											'🔔',
 											$author$project$Main$white,
 											_List_Nil,
 											_Utils_Tuple2('http://rewordify.com/schoolclock.php?p=08:45=1st%20Period;09:29=Passing%20Period;09:34=2nd%20Period;10:18=Passing%20Period;10:23=3rd%20Period;11:07=Passing%20Period;11:12=4th%20Period%20A%20Lunch;11:42=Passing%20Period;11:47=4th%20Period%20B%20Lunch;12:17=Passing%20Period;12:22=4th%20Period%20C%20Lunch;12:52=Passing%20Period;12:57=4th%20Period%20D%20Lunch;13:27=Passing%20Period;13:32=5th%20Period;14:16=Passing%20Period%20;14:21=6th%20Period;15:05=Passing%20Period;15:10=7th%20Period;15:55=End%20of%20School%20Day', 'Bell Schedule')),
-											A3(
+											A4(
 											$author$project$Main$customButton,
+											'🕝',
 											A3($mdgriffith$elm_ui$Element$rgb255, 0, 73, 137),
 											_List_Nil,
 											_Utils_Tuple2('https://310859.tcplusondemand.com/app/webclock/#/EmployeeLogOn/310859', 'Timeclock +')),
-											A3(
+											A4(
 											$author$project$Main$customButton,
+											'🔒',
 											$author$project$Main$white,
 											_List_Nil,
 											_Utils_Tuple2('https://www.securly.com/ssl', 'Securly'))
@@ -12369,48 +12429,57 @@ var $author$project$Main$view = function (model) {
 									_List_Nil,
 									_List_fromArray(
 										[
-											A3(
+											A4(
 											$author$project$Main$customButton,
+											'📧',
 											$author$project$Main$red,
 											_List_Nil,
 											_Utils_Tuple2('https://mail.google.com/mail/u/0/?tab=om', 'Gmail')),
-											A3(
+											A4(
 											$author$project$Main$customButton,
+											'➗',
 											$author$project$Main$green,
 											_List_Nil,
 											_Utils_Tuple2('https://docs.google.com/spreadsheets/u/0/?tgif=d', 'Sheets')),
-											A3(
+											A4(
 											$author$project$Main$customButton,
+											'🖥️',
 											$author$project$Main$blue,
 											_List_Nil,
 											_Utils_Tuple2('https://remotedesktop.google.com', 'Remote Desktop')),
-											A3(
+											A4(
 											$author$project$Main$customButton,
+											'</>',
 											$author$project$Main$green,
 											_List_Nil,
 											_Utils_Tuple2('https://script.google.com/home', 'Google Scripts')),
-											A3(
+											A4(
 											$author$project$Main$customButton,
+											'📂',
 											$author$project$Main$yellow,
 											_List_Nil,
 											_Utils_Tuple2('https://drive.google.com/drive/my-drive', 'Drive')),
-											A3(
+											A4(
 											$author$project$Main$customButton,
+											'📃',
 											$author$project$Main$purple,
 											_List_Nil,
 											_Utils_Tuple2('https://docs.google.com/forms/u/0/?tgif=d', 'Forms')),
-											A3(
+											A4(
 											$author$project$Main$customButton,
+											'📒',
 											$author$project$Main$yellow,
 											_List_Nil,
 											_Utils_Tuple2('https://keep.google.com/', 'Keep')),
-											A3(
+											A4(
 											$author$project$Main$customButton,
+											'📺',
 											$author$project$Main$red,
 											_List_Nil,
 											_Utils_Tuple2('https://youtube.com', 'Youtube')),
-											A3(
+											A4(
 											$author$project$Main$customButton,
+											'🗓️',
 											$author$project$Main$blue,
 											_List_Nil,
 											_Utils_Tuple2('https://calendar.google.com', 'Calendar'))
@@ -12431,18 +12500,21 @@ var $author$project$Main$view = function (model) {
 									_List_Nil,
 									_List_fromArray(
 										[
-											A3(
+											A4(
 											$author$project$Main$customButton,
+											'📄',
 											A3($mdgriffith$elm_ui$Element$rgb255, 0, 200, 200),
 											_List_Nil,
 											_Utils_Tuple2('https://docs.google.com/spreadsheets/d/1RURMy0InlA1olMFZ84nSdlZbs3UdZ8gIB13HzxtsONo/edit#gid=0', 'Serial # Tracking')),
-											A3(
+											A4(
 											$author$project$Main$customButton,
+											'📄',
 											A3($mdgriffith$elm_ui$Element$rgb255, 0, 73, 137),
 											_List_Nil,
 											_Utils_Tuple2('https://docs.google.com/spreadsheets/d/1Cj9UtyQ2--4-qeNi1ZDJOxy1HO3WeZz9z8g4SrTyl6M/edit#gid=0', 'JDB + Repair Form')),
-											A3(
+											A4(
 											$author$project$Main$customButton,
+											'📄',
 											A3($mdgriffith$elm_ui$Element$rgb255, 0, 200, 200),
 											_List_Nil,
 											_Utils_Tuple2('https://docs.google.com/spreadsheets/d/1LNlsKzwp2Xto2fCqNA--mEfs5XZ2hnEYb8wJvrrTv0Q/edit#gid=0', 'Hallway Sweep'))
@@ -12453,28 +12525,33 @@ var $author$project$Main$view = function (model) {
 									_List_Nil,
 									_List_fromArray(
 										[
-											A3(
+											A4(
 											$author$project$Main$customButton,
+											'📃',
 											A3($mdgriffith$elm_ui$Element$rgb255, 2, 84, 204),
 											_List_Nil,
 											_Utils_Tuple2('https://trello.com/b/DhCrKPFp/autoloader', 'Trello')),
-											A3(
+											A4(
 											$author$project$Main$customButton,
+											'{ / }',
 											$author$project$Main$green,
 											_List_Nil,
 											_Utils_Tuple2('https://github.com/', 'GitHub')),
-											A3(
+											A4(
 											$author$project$Main$customButton,
+											'\uD83E\uDE9F',
 											A3($mdgriffith$elm_ui$Element$rgb255, 0, 122, 204),
 											_List_Nil,
 											_Utils_Tuple2('https://vscode.dev', 'VS Code')),
-											A3(
+											A4(
 											$author$project$Main$customButton,
+											'🎨',
 											$author$project$Main$green,
 											_List_Nil,
 											_Utils_Tuple2('https://www.w3schools.com/colors/colors_picker.asp', 'W3 Color Picker')),
-											A3(
+											A4(
 											$author$project$Main$customButton,
+											'📖',
 											$author$project$Main$blue,
 											_List_Nil,
 											_Utils_Tuple2('https://package.elm-lang.org/packages/mdgriffith/elm-ui/latest/', 'Elm-ui'))
@@ -12485,18 +12562,21 @@ var $author$project$Main$view = function (model) {
 									_List_Nil,
 									_List_fromArray(
 										[
-											A3(
+											A4(
 											$author$project$Main$customButton,
+											'🏫',
 											A3($mdgriffith$elm_ui$Element$rgb255, 0, 200, 200),
 											_List_Nil,
 											_Utils_Tuple2('https://www.marion.k12.in.us/', 'MCS Website')),
-											A3(
+											A4(
 											$author$project$Main$customButton,
+											'🕝',
 											A3($mdgriffith$elm_ui$Element$rgb255, 0, 73, 137),
 											_List_Nil,
 											_Utils_Tuple2('https://310859.tcplusondemand.com/app/webclock/#/EmployeeLogOn/310859', 'Timeclock +')),
-											A3(
+											A4(
 											$author$project$Main$customButton,
+											'💵',
 											A3($mdgriffith$elm_ui$Element$rgb255, 0, 200, 200),
 											_List_Nil,
 											_Utils_Tuple2('https://marion.k12-portal.in/login.php', 'Paystubs'))
