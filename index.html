@@ -13079,6 +13079,60 @@ var $mdgriffith$elm_ui$Element$layoutWith = F3(
 				_Utils_ap($mdgriffith$elm_ui$Internal$Model$rootStyle, attrs)),
 			child);
 	});
+var $author$project$Main$mjhSchedule = _List_fromArray(
+	[
+		_Utils_Tuple2(
+		_Utils_Tuple2(0, 0),
+		'School hasn\'t started.'),
+		_Utils_Tuple2(
+		_Utils_Tuple2(8, 49),
+		'1st Period'),
+		_Utils_Tuple2(
+		_Utils_Tuple2(9, 20),
+		'Passing Period'),
+		_Utils_Tuple2(
+		_Utils_Tuple2(9, 23),
+		'2nd Period'),
+		_Utils_Tuple2(
+		_Utils_Tuple2(10, 6),
+		'Passing Period'),
+		_Utils_Tuple2(
+		_Utils_Tuple2(10, 9),
+		'3rd Period'),
+		_Utils_Tuple2(
+		_Utils_Tuple2(10, 52),
+		'Passing Period'),
+		_Utils_Tuple2(
+		_Utils_Tuple2(10, 55),
+		'4th Period Lunch A'),
+		_Utils_Tuple2(
+		_Utils_Tuple2(11, 38),
+		'Passing Period'),
+		_Utils_Tuple2(
+		_Utils_Tuple2(11, 41),
+		'4th Period Lunch B'),
+		_Utils_Tuple2(
+		_Utils_Tuple2(13, 22),
+		'Passing Period'),
+		_Utils_Tuple2(
+		_Utils_Tuple2(13, 25),
+		'4th Period Lunch C'),
+		_Utils_Tuple2(
+		_Utils_Tuple2(14, 8),
+		'Passing Period'),
+		_Utils_Tuple2(
+		_Utils_Tuple2(14, 11),
+		'5th Period'),
+		_Utils_Tuple2(
+		_Utils_Tuple2(14, 54),
+		'Passing Period'),
+		_Utils_Tuple2(
+		_Utils_Tuple2(14, 57),
+		'6th Period'),
+		_Utils_Tuple2(
+		_Utils_Tuple2(15, 40),
+		'School\'s Out.')
+	]);
 var $mdgriffith$elm_ui$Element$moveUp = function (y) {
 	return A2(
 		$mdgriffith$elm_ui$Internal$Model$TransformComponent,
@@ -13654,16 +13708,22 @@ var $author$project$Main$view = function (model) {
 											_Utils_Tuple2('https://www.w3schools.com/colors/colors_picker.asp', 'W3 Color Picker')),
 											A4(
 											$author$project$Main$customButton,
+											'✏️',
+											A3($mdgriffith$elm_ui$Element$rgb255, 0, 200, 200),
+											_List_Nil,
+											_Utils_Tuple2('https://app.diagrams.net/', 'Draw.io')),
+											A4(
+											$author$project$Main$customButton,
 											'📖',
 											$author$project$Main$blue,
 											_List_Nil,
 											_Utils_Tuple2('https://package.elm-lang.org/packages/mdgriffith/elm-ui/latest/', 'Elm-ui')),
 											A4(
 											$author$project$Main$customButton,
-											'✏️',
-											A3($mdgriffith$elm_ui$Element$rgb255, 0, 200, 200),
+											'✍',
+											A3($mdgriffith$elm_ui$Element$rgb255, 204, 0, 204),
 											_List_Nil,
-											_Utils_Tuple2('https://app.diagrams.net/', 'Draw.io'))
+											_Utils_Tuple2('https://www.photopea.com/', 'Photopea'))
 										])),
 									A3(
 									$author$project$Main$columnGroup,
@@ -13707,10 +13767,18 @@ var $author$project$Main$view = function (model) {
 									$author$project$Main$columnGroup,
 									'Schedule',
 									_List_Nil,
-									_List_fromArray(
-										[
-											A6($author$project$Main$component, 'MHS', $author$project$Main$mhsSchedule, hourInt, minuteInt, model.zone, model.time)
-										]))
+									A2(
+										$elm$core$List$map,
+										function (_v0) {
+											var title = _v0.a;
+											var schedule = _v0.b;
+											return A6($author$project$Main$component, title, schedule, hourInt, minuteInt, model.zone, model.time);
+										},
+										_List_fromArray(
+											[
+												_Utils_Tuple2('MHS', $author$project$Main$mhsSchedule),
+												_Utils_Tuple2('MJH', $author$project$Main$mjhSchedule)
+											])))
 								]))
 						]))
 				])));
