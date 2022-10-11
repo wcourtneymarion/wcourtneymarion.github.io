@@ -5676,7 +5676,7 @@ var $elm$time$Time$every = F2(
 		return $elm$time$Time$subscription(
 			A2($elm$time$Time$Every, interval, tagger));
 	});
-var $author$project$Main$subscriptions = function (model) {
+var $author$project$Main$subscriptions = function (_v0) {
 	return A2($elm$time$Time$every, 1000, $author$project$Main$Tick);
 };
 var $author$project$Main$Open = {$: 'Open'};
@@ -5734,16 +5734,20 @@ var $mdgriffith$elm_ui$Internal$Model$Rgba = F4(
 	function (a, b, c, d) {
 		return {$: 'Rgba', a: a, b: b, c: c, d: d};
 	});
-var $mdgriffith$elm_ui$Element$rgb255 = F3(
-	function (red, green, blue) {
-		return A4($mdgriffith$elm_ui$Internal$Model$Rgba, red / 255, green / 255, blue / 255, 1);
-	});
-var $author$project$Main$background = A3($mdgriffith$elm_ui$Element$rgb255, 41, 21, 55);
 var $mdgriffith$elm_ui$Element$rgb = F3(
 	function (r, g, b) {
 		return A4($mdgriffith$elm_ui$Internal$Model$Rgba, r, g, b, 1);
 	});
 var $author$project$Main$blue = A3($mdgriffith$elm_ui$Element$rgb, 0, 0, 1);
+var $mdgriffith$elm_ui$Element$rgb255 = F3(
+	function (red, green, blue) {
+		return A4($mdgriffith$elm_ui$Internal$Model$Rgba, red / 255, green / 255, blue / 255, 1);
+	});
+var $author$project$Main$blueA = A3($mdgriffith$elm_ui$Element$rgb255, 0, 122, 204);
+var $author$project$Main$blueB = A3($mdgriffith$elm_ui$Element$rgb255, 0, 200, 200);
+var $author$project$Main$blueC = A3($mdgriffith$elm_ui$Element$rgb255, 0, 73, 137);
+var $author$project$Main$blueD = A3($mdgriffith$elm_ui$Element$rgb255, 2, 84, 204);
+var $author$project$Main$brownA = A3($mdgriffith$elm_ui$Element$rgb255, 153, 102, 51);
 var $mdgriffith$elm_ui$Internal$Model$Unkeyed = function (a) {
 	return {$: 'Unkeyed', a: a};
 };
@@ -11303,7 +11307,6 @@ var $mdgriffith$elm_ui$Internal$Model$Fill = function (a) {
 	return {$: 'Fill', a: a};
 };
 var $mdgriffith$elm_ui$Element$fill = $mdgriffith$elm_ui$Internal$Model$Fill(1);
-var $author$project$Main$gold = A3($mdgriffith$elm_ui$Element$rgb255, 244, 182, 44);
 var $mdgriffith$elm_ui$Internal$Model$NoAttribute = {$: 'NoAttribute'};
 var $mdgriffith$elm_ui$Internal$Flag$bgGradient = $mdgriffith$elm_ui$Internal$Flag$flag(10);
 var $mdgriffith$elm_ui$Element$Background$gradient = function (_v0) {
@@ -11349,6 +11352,7 @@ var $mdgriffith$elm_ui$Element$Background$gradient = function (_v0) {
 var $author$project$Main$grey = function (y) {
 	return A3($mdgriffith$elm_ui$Element$rgb255, y, y, y);
 };
+var $author$project$Main$orangeA = A3($mdgriffith$elm_ui$Element$rgb255, 244, 182, 44);
 var $mdgriffith$elm_ui$Internal$Model$PaddingStyle = F5(
 	function (a, b, c, d, e) {
 		return {$: 'PaddingStyle', a: a, b: b, c: c, d: d, e: e};
@@ -11417,6 +11421,8 @@ var $mdgriffith$elm_ui$Element$paddingXY = F2(
 					xFloat));
 		}
 	});
+var $author$project$Main$purpleF = A3($mdgriffith$elm_ui$Element$rgb255, 41, 35, 47);
+var $author$project$Main$purpleH = A3($mdgriffith$elm_ui$Element$rgb255, 77, 65, 88);
 var $mdgriffith$elm_ui$Internal$Flag$borderRound = $mdgriffith$elm_ui$Internal$Flag$flag(17);
 var $mdgriffith$elm_ui$Element$Border$roundEach = function (_v0) {
 	var topLeft = _v0.topLeft;
@@ -11533,16 +11539,15 @@ var $author$project$Main$columnGroup = F3(
 				_List_fromArray(
 					[
 						$mdgriffith$elm_ui$Element$height($mdgriffith$elm_ui$Element$fill),
-						$mdgriffith$elm_ui$Element$Background$color(
-						A3($mdgriffith$elm_ui$Element$rgb255, 41, 35, 47)),
+						$mdgriffith$elm_ui$Element$Background$color($author$project$Main$purpleF),
 						$mdgriffith$elm_ui$Element$Background$gradient(
 						{
 							angle: 4.1132,
 							steps: _List_fromArray(
 								[
-									A3($mdgriffith$elm_ui$Element$rgb255, 41, 35, 47),
-									A3($mdgriffith$elm_ui$Element$rgb255, 41, 35, 47),
-									A3($mdgriffith$elm_ui$Element$rgb255, 41, 35, 47),
+									$author$project$Main$purpleF,
+									$author$project$Main$purpleF,
+									$author$project$Main$purpleF,
 									$author$project$Main$grey(30)
 								])
 						}),
@@ -11571,8 +11576,7 @@ var $author$project$Main$columnGroup = F3(
 							$mdgriffith$elm_ui$Element$centerX,
 							$mdgriffith$elm_ui$Element$Font$bold,
 							$mdgriffith$elm_ui$Element$width($mdgriffith$elm_ui$Element$fill),
-							$mdgriffith$elm_ui$Element$Background$color(
-							A3($mdgriffith$elm_ui$Element$rgb255, 77, 65, 88)),
+							$mdgriffith$elm_ui$Element$Background$color($author$project$Main$purpleH),
 							$mdgriffith$elm_ui$Element$Border$shadow(
 							{
 								blur: 10,
@@ -11580,7 +11584,7 @@ var $author$project$Main$columnGroup = F3(
 								offset: _Utils_Tuple2(1, 2),
 								size: 1.5
 							}),
-							$mdgriffith$elm_ui$Element$Font$color($author$project$Main$gold),
+							$mdgriffith$elm_ui$Element$Font$color($author$project$Main$orangeA),
 							$mdgriffith$elm_ui$Element$paddingEach(
 							{bottom: 10, left: 0, right: 0, top: 10}),
 							$mdgriffith$elm_ui$Element$Border$roundEach(
@@ -11626,7 +11630,6 @@ var $author$project$Main$getCountdown = F2(
 					var currentValue = $author$project$Main$timeToNumber(currentTime);
 					var _v1 = x;
 					var timePair = _v1.a;
-					var label = _v1.b;
 					var myValue = $author$project$Main$timeToNumber(timePair);
 					return (myValue - currentValue) + 1;
 				} else {
@@ -11635,7 +11638,6 @@ var $author$project$Main$getCountdown = F2(
 					var currentValue = $author$project$Main$timeToNumber(currentTime);
 					var _v2 = x;
 					var timePair = _v2.a;
-					var label = _v2.b;
 					var myValue = $author$project$Main$timeToNumber(timePair);
 					if (_Utils_cmp(currentValue, myValue) > 0) {
 						var $temp$currentTime = currentTime,
@@ -11658,7 +11660,6 @@ var $author$project$Main$getLabel = F2(
 				return 'Oops';
 			} else {
 				if (!schedule.b.b) {
-					var x = schedule.a;
 					return 'School hasn\'t Started';
 				} else {
 					var x = schedule.a;
@@ -11754,7 +11755,7 @@ var $mdgriffith$elm_ui$Element$padding = function (x) {
 			f,
 			f));
 };
-var $author$project$Main$purple = A3($mdgriffith$elm_ui$Element$rgb255, 112, 56, 149);
+var $author$project$Main$purpleB = A3($mdgriffith$elm_ui$Element$rgb255, 112, 56, 149);
 var $mdgriffith$elm_ui$Internal$Model$Px = function (a) {
 	return {$: 'Px', a: a};
 };
@@ -11776,7 +11777,7 @@ var $author$project$Main$timeTracker = F4(
 			$mdgriffith$elm_ui$Element$column,
 			_List_fromArray(
 				[
-					$mdgriffith$elm_ui$Element$Background$color($author$project$Main$purple),
+					$mdgriffith$elm_ui$Element$Background$color($author$project$Main$purpleB),
 					$mdgriffith$elm_ui$Element$Border$rounded(15),
 					$mdgriffith$elm_ui$Element$spacing(5),
 					$mdgriffith$elm_ui$Element$Font$size(25),
@@ -11801,7 +11802,7 @@ var $author$project$Main$timeTracker = F4(
 					_List_fromArray(
 						[
 							$mdgriffith$elm_ui$Element$centerX,
-							$mdgriffith$elm_ui$Element$Font$color($author$project$Main$gold),
+							$mdgriffith$elm_ui$Element$Font$color($author$project$Main$orangeA),
 							$mdgriffith$elm_ui$Element$paddingEach(
 							{bottom: 15, left: 0, right: 0, top: 0})
 						]),
@@ -11859,8 +11860,8 @@ var $author$project$Main$countdown = F5(
 					A4($author$project$Main$timeTracker, title, currentPeriod, diffString, next)
 				]));
 	});
-var $author$project$Main$component = F6(
-	function (title, schedule, hourInt, minuteInt, zone, time) {
+var $author$project$Main$component = F4(
+	function (title, schedule, hourInt, minuteInt) {
 		return A2(
 			$mdgriffith$elm_ui$Element$column,
 			_List_fromArray(
@@ -12053,7 +12054,7 @@ var $author$project$Main$glowOnHover = $mdgriffith$elm_ui$Element$mouseOver(
 	_List_fromArray(
 		[
 			A2($mdgriffith$elm_ui$Element$Font$glow, $author$project$Main$black, 5),
-			$mdgriffith$elm_ui$Element$Font$color($author$project$Main$gold)
+			$mdgriffith$elm_ui$Element$Font$color($author$project$Main$orangeA)
 		]));
 var $elm$html$Html$Attributes$href = function (url) {
 	return A2(
@@ -12117,10 +12118,8 @@ var $mdgriffith$elm_ui$Element$row = F2(
 						attrs))),
 			$mdgriffith$elm_ui$Internal$Model$Unkeyed(children));
 	});
-var $author$project$Main$customButton = F4(
-	function (icon, lineColor, attr, link) {
-		var url = link.a;
-		var labelText = link.b;
+var $author$project$Main$customButton = F2(
+	function (attr, data) {
 		var label = A2(
 			$mdgriffith$elm_ui$Element$row,
 			_List_fromArray(
@@ -12147,12 +12146,12 @@ var $author$project$Main$customButton = F4(
 							$mdgriffith$elm_ui$Element$Border$roundEach(
 							{bottomLeft: 8, bottomRight: 0, topLeft: 0, topRight: 0})
 						]),
-					$mdgriffith$elm_ui$Element$text(icon)),
+					$mdgriffith$elm_ui$Element$text(data.icon)),
 					A2(
 					$mdgriffith$elm_ui$Element$el,
 					_List_fromArray(
 						[$mdgriffith$elm_ui$Element$centerX]),
-					$mdgriffith$elm_ui$Element$text(labelText))
+					$mdgriffith$elm_ui$Element$text(data.label))
 				]));
 		return A2(
 			$mdgriffith$elm_ui$Element$newTabLink,
@@ -12164,7 +12163,7 @@ var $author$project$Main$customButton = F4(
 							angle: 0,
 							steps: $elm$core$List$reverse(
 								_List_fromArray(
-									[lineColor, $author$project$Main$buttonColor, $author$project$Main$buttonColor, $author$project$Main$buttonColor, $author$project$Main$buttonColor, $author$project$Main$buttonColor]))
+									[data.color, $author$project$Main$buttonColor, $author$project$Main$buttonColor, $author$project$Main$buttonColor, $author$project$Main$buttonColor, $author$project$Main$buttonColor]))
 						}),
 						$mdgriffith$elm_ui$Element$Border$rounded(8),
 						$author$project$Main$glowOnHover,
@@ -12182,7 +12181,7 @@ var $author$project$Main$customButton = F4(
 						$mdgriffith$elm_ui$Element$Font$bold
 					]),
 				attr),
-			{label: label, url: url});
+			{label: label, url: data.url});
 	});
 var $mdgriffith$elm_ui$Internal$Model$FocusStyleOption = function (a) {
 	return {$: 'FocusStyleOption', a: a};
@@ -12195,7 +12194,7 @@ var $author$project$Main$gradyear = function (_v0) {
 		$mdgriffith$elm_ui$Element$row,
 		_List_fromArray(
 			[
-				$mdgriffith$elm_ui$Element$Background$color($author$project$Main$purple),
+				$mdgriffith$elm_ui$Element$Background$color($author$project$Main$purpleB),
 				$mdgriffith$elm_ui$Element$Border$rounded(15),
 				$mdgriffith$elm_ui$Element$spacing(25),
 				$mdgriffith$elm_ui$Element$Font$size(25),
@@ -12264,255 +12263,51 @@ var $author$project$Main$gradYearColumn = A3(
 				]),
 			A2(
 				$elm$core$List$map,
-				$author$project$Main$gradyear,
+				function (_v0) {
+					var grade = _v0.a;
+					var year = _v0.b;
+					return $author$project$Main$gradyear(
+						_Utils_Tuple2(
+							A2(
+								$mdgriffith$elm_ui$Element$row,
+								_List_fromArray(
+									[
+										$mdgriffith$elm_ui$Element$spacing(3)
+									]),
+								_List_fromArray(
+									[
+										$mdgriffith$elm_ui$Element$text(grade),
+										A2(
+										$mdgriffith$elm_ui$Element$el,
+										_List_fromArray(
+											[
+												$mdgriffith$elm_ui$Element$Font$size(14),
+												$mdgriffith$elm_ui$Element$moveDown(3)
+											]),
+										$mdgriffith$elm_ui$Element$text('th'))
+									])),
+							year));
+				},
 				_List_fromArray(
 					[
-						_Utils_Tuple2(
-						A2(
-							$mdgriffith$elm_ui$Element$row,
-							_List_fromArray(
-								[
-									$mdgriffith$elm_ui$Element$spacing(3)
-								]),
-							_List_fromArray(
-								[
-									$mdgriffith$elm_ui$Element$text('12'),
-									A2(
-									$mdgriffith$elm_ui$Element$el,
-									_List_fromArray(
-										[
-											$mdgriffith$elm_ui$Element$Font$size(14),
-											$mdgriffith$elm_ui$Element$moveDown(3)
-										]),
-									$mdgriffith$elm_ui$Element$text('th'))
-								])),
-						'2023'),
-						_Utils_Tuple2(
-						A2(
-							$mdgriffith$elm_ui$Element$row,
-							_List_fromArray(
-								[
-									$mdgriffith$elm_ui$Element$spacing(3)
-								]),
-							_List_fromArray(
-								[
-									$mdgriffith$elm_ui$Element$text('11'),
-									A2(
-									$mdgriffith$elm_ui$Element$el,
-									_List_fromArray(
-										[
-											$mdgriffith$elm_ui$Element$Font$size(14),
-											$mdgriffith$elm_ui$Element$moveDown(3)
-										]),
-									$mdgriffith$elm_ui$Element$text('th'))
-								])),
-						'2024'),
-						_Utils_Tuple2(
-						A2(
-							$mdgriffith$elm_ui$Element$row,
-							_List_fromArray(
-								[
-									$mdgriffith$elm_ui$Element$spacing(3)
-								]),
-							_List_fromArray(
-								[
-									$mdgriffith$elm_ui$Element$text('10'),
-									A2(
-									$mdgriffith$elm_ui$Element$el,
-									_List_fromArray(
-										[
-											$mdgriffith$elm_ui$Element$Font$size(14),
-											$mdgriffith$elm_ui$Element$moveDown(3)
-										]),
-									$mdgriffith$elm_ui$Element$text('th'))
-								])),
-						'2025'),
-						_Utils_Tuple2(
-						A2(
-							$mdgriffith$elm_ui$Element$row,
-							_List_fromArray(
-								[
-									$mdgriffith$elm_ui$Element$spacing(3)
-								]),
-							_List_fromArray(
-								[
-									$mdgriffith$elm_ui$Element$text('9'),
-									A2(
-									$mdgriffith$elm_ui$Element$el,
-									_List_fromArray(
-										[
-											$mdgriffith$elm_ui$Element$Font$size(14),
-											$mdgriffith$elm_ui$Element$moveDown(3)
-										]),
-									$mdgriffith$elm_ui$Element$text('th'))
-								])),
-						'2026'),
-						_Utils_Tuple2(
-						A2(
-							$mdgriffith$elm_ui$Element$row,
-							_List_fromArray(
-								[
-									$mdgriffith$elm_ui$Element$spacing(3)
-								]),
-							_List_fromArray(
-								[
-									$mdgriffith$elm_ui$Element$text('8'),
-									A2(
-									$mdgriffith$elm_ui$Element$el,
-									_List_fromArray(
-										[
-											$mdgriffith$elm_ui$Element$Font$size(14),
-											$mdgriffith$elm_ui$Element$moveDown(3)
-										]),
-									$mdgriffith$elm_ui$Element$text('th'))
-								])),
-						'2027'),
-						_Utils_Tuple2(
-						A2(
-							$mdgriffith$elm_ui$Element$row,
-							_List_fromArray(
-								[
-									$mdgriffith$elm_ui$Element$spacing(3)
-								]),
-							_List_fromArray(
-								[
-									$mdgriffith$elm_ui$Element$text('7'),
-									A2(
-									$mdgriffith$elm_ui$Element$el,
-									_List_fromArray(
-										[
-											$mdgriffith$elm_ui$Element$Font$size(14),
-											$mdgriffith$elm_ui$Element$moveDown(3)
-										]),
-									$mdgriffith$elm_ui$Element$text('th'))
-								])),
-						'2028'),
-						_Utils_Tuple2(
-						A2(
-							$mdgriffith$elm_ui$Element$row,
-							_List_fromArray(
-								[
-									$mdgriffith$elm_ui$Element$spacing(3)
-								]),
-							_List_fromArray(
-								[
-									$mdgriffith$elm_ui$Element$text('6'),
-									A2(
-									$mdgriffith$elm_ui$Element$el,
-									_List_fromArray(
-										[
-											$mdgriffith$elm_ui$Element$Font$size(14),
-											$mdgriffith$elm_ui$Element$moveDown(3)
-										]),
-									$mdgriffith$elm_ui$Element$text('th'))
-								])),
-						'2029'),
-						_Utils_Tuple2(
-						A2(
-							$mdgriffith$elm_ui$Element$row,
-							_List_fromArray(
-								[
-									$mdgriffith$elm_ui$Element$spacing(3)
-								]),
-							_List_fromArray(
-								[
-									$mdgriffith$elm_ui$Element$text('5'),
-									A2(
-									$mdgriffith$elm_ui$Element$el,
-									_List_fromArray(
-										[
-											$mdgriffith$elm_ui$Element$Font$size(14),
-											$mdgriffith$elm_ui$Element$moveDown(3)
-										]),
-									$mdgriffith$elm_ui$Element$text('th'))
-								])),
-						'2030'),
-						_Utils_Tuple2(
-						A2(
-							$mdgriffith$elm_ui$Element$row,
-							_List_fromArray(
-								[
-									$mdgriffith$elm_ui$Element$spacing(3)
-								]),
-							_List_fromArray(
-								[
-									$mdgriffith$elm_ui$Element$text('4'),
-									A2(
-									$mdgriffith$elm_ui$Element$el,
-									_List_fromArray(
-										[
-											$mdgriffith$elm_ui$Element$Font$size(14),
-											$mdgriffith$elm_ui$Element$moveDown(3)
-										]),
-									$mdgriffith$elm_ui$Element$text('th'))
-								])),
-						'2031'),
-						_Utils_Tuple2(
-						A2(
-							$mdgriffith$elm_ui$Element$row,
-							_List_fromArray(
-								[
-									$mdgriffith$elm_ui$Element$spacing(3)
-								]),
-							_List_fromArray(
-								[
-									$mdgriffith$elm_ui$Element$text('3'),
-									A2(
-									$mdgriffith$elm_ui$Element$el,
-									_List_fromArray(
-										[
-											$mdgriffith$elm_ui$Element$Font$size(14),
-											$mdgriffith$elm_ui$Element$moveDown(3)
-										]),
-									$mdgriffith$elm_ui$Element$text('th'))
-								])),
-						'2032'),
-						_Utils_Tuple2(
-						A2(
-							$mdgriffith$elm_ui$Element$row,
-							_List_fromArray(
-								[
-									$mdgriffith$elm_ui$Element$spacing(3)
-								]),
-							_List_fromArray(
-								[
-									$mdgriffith$elm_ui$Element$text('2'),
-									A2(
-									$mdgriffith$elm_ui$Element$el,
-									_List_fromArray(
-										[
-											$mdgriffith$elm_ui$Element$Font$size(14),
-											$mdgriffith$elm_ui$Element$moveDown(3)
-										]),
-									$mdgriffith$elm_ui$Element$text('th'))
-								])),
-						'2033'),
-						_Utils_Tuple2(
-						A2(
-							$mdgriffith$elm_ui$Element$row,
-							_List_fromArray(
-								[
-									$mdgriffith$elm_ui$Element$spacing(3)
-								]),
-							_List_fromArray(
-								[
-									$mdgriffith$elm_ui$Element$text('1'),
-									A2(
-									$mdgriffith$elm_ui$Element$el,
-									_List_fromArray(
-										[
-											$mdgriffith$elm_ui$Element$Font$size(14),
-											$mdgriffith$elm_ui$Element$moveDown(3)
-										]),
-									$mdgriffith$elm_ui$Element$text('th'))
-								])),
-						'2034'),
-						_Utils_Tuple2(
-						$mdgriffith$elm_ui$Element$text('KG'),
-						'2035')
+						_Utils_Tuple2('12', '2024'),
+						_Utils_Tuple2('11', '2024'),
+						_Utils_Tuple2('10', '2025'),
+						_Utils_Tuple2('9', '2026'),
+						_Utils_Tuple2('8', '2027'),
+						_Utils_Tuple2('7', '2028'),
+						_Utils_Tuple2('6', '2029'),
+						_Utils_Tuple2('5', '2030'),
+						_Utils_Tuple2('4', '2031'),
+						_Utils_Tuple2('3', '2032'),
+						_Utils_Tuple2('2', '2033'),
+						_Utils_Tuple2('1', '2034'),
+						_Utils_Tuple2('KG', '2035')
 					])))
 		]));
+var $author$project$Main$grayA = A3($mdgriffith$elm_ui$Element$rgb255, 100, 100, 100);
 var $author$project$Main$green = A3($mdgriffith$elm_ui$Element$rgb, 0, 1, 0);
+var $author$project$Main$greenB = A3($mdgriffith$elm_ui$Element$rgb255, 146, 200, 62);
 var $mdgriffith$elm_ui$Internal$Model$InFront = {$: 'InFront'};
 var $mdgriffith$elm_ui$Element$createNearby = F2(
 	function (loc, element) {
@@ -12525,6 +12320,10 @@ var $mdgriffith$elm_ui$Element$createNearby = F2(
 var $mdgriffith$elm_ui$Element$inFront = function (element) {
 	return A2($mdgriffith$elm_ui$Element$createNearby, $mdgriffith$elm_ui$Internal$Model$InFront, element);
 };
+var $author$project$Main$purpleD = A3($mdgriffith$elm_ui$Element$rgb255, 33, 17, 45);
+var $author$project$Main$purpleE = A3($mdgriffith$elm_ui$Element$rgb255, 41, 21, 55);
+var $author$project$Main$purpleG = A3($mdgriffith$elm_ui$Element$rgb255, 56, 28, 74);
+var $author$project$Main$purpleI = A3($mdgriffith$elm_ui$Element$rgb255, 97, 49, 129);
 var $author$project$Main$headerTitle = function (clock) {
 	return A2(
 		$mdgriffith$elm_ui$Element$el,
@@ -12543,17 +12342,12 @@ var $author$project$Main$headerTitle = function (clock) {
 					offset: _Utils_Tuple2(1, 4),
 					size: 1.5
 				}),
-				$mdgriffith$elm_ui$Element$Font$color($author$project$Main$gold),
+				$mdgriffith$elm_ui$Element$Font$color($author$project$Main$orangeA),
 				$mdgriffith$elm_ui$Element$Background$gradient(
 				{
 					angle: 3.1046,
 					steps: _List_fromArray(
-						[
-							A3($mdgriffith$elm_ui$Element$rgb255, 97, 49, 129),
-							A3($mdgriffith$elm_ui$Element$rgb255, 56, 28, 74),
-							$author$project$Main$background,
-							A3($mdgriffith$elm_ui$Element$rgb255, 33, 17, 45)
-						])
+						[$author$project$Main$purpleI, $author$project$Main$purpleG, $author$project$Main$purpleE, $author$project$Main$purpleD])
 				}),
 				$mdgriffith$elm_ui$Element$Font$shadow(
 				{
@@ -12753,6 +12547,7 @@ var $author$project$Main$dropItem = function (data) {
 			url: url
 		});
 };
+var $author$project$Main$purpleC = A3($mdgriffith$elm_ui$Element$rgb255, 119, 142, 177);
 var $author$project$Main$jamfDropdown = function (model) {
 	var dropDown = _Utils_eq(model.jamfDropdown, $author$project$Main$Open) ? A2(
 		$mdgriffith$elm_ui$Element$column,
@@ -12782,7 +12577,7 @@ var $author$project$Main$jamfDropdown = function (model) {
 					_Utils_Tuple2('Users', 'https://marion.jamfcloud.com/users'),
 					_Utils_Tuple2('Devices', 'https://marion.jamfcloud.com/devices')
 				]))) : $mdgriffith$elm_ui$Element$text('');
-	var conditionalGlow = _Utils_eq(model.jamfDropdown, $author$project$Main$Closed) ? $author$project$Main$glowOnHover : $mdgriffith$elm_ui$Element$Font$color($author$project$Main$gold);
+	var conditionalGlow = _Utils_eq(model.jamfDropdown, $author$project$Main$Closed) ? $author$project$Main$glowOnHover : $mdgriffith$elm_ui$Element$Font$color($author$project$Main$orangeA);
 	return A2(
 		$mdgriffith$elm_ui$Element$Input$button,
 		_List_fromArray(
@@ -12793,14 +12588,7 @@ var $author$project$Main$jamfDropdown = function (model) {
 					angle: 0,
 					steps: $elm$core$List$reverse(
 						_List_fromArray(
-							[
-								A3($mdgriffith$elm_ui$Element$rgb255, 119, 142, 177),
-								$author$project$Main$buttonColor,
-								$author$project$Main$buttonColor,
-								$author$project$Main$buttonColor,
-								$author$project$Main$buttonColor,
-								$author$project$Main$buttonColor
-							]))
+							[$author$project$Main$purpleC, $author$project$Main$buttonColor, $author$project$Main$buttonColor, $author$project$Main$buttonColor, $author$project$Main$buttonColor, $author$project$Main$buttonColor]))
 				}),
 				$mdgriffith$elm_ui$Element$Border$rounded(8),
 				$mdgriffith$elm_ui$Element$Font$color(
@@ -12829,54 +12617,6 @@ var $author$project$Main$jamfDropdown = function (model) {
 			onPress: $elm$core$Maybe$Just($author$project$Main$ToggleJAMFDropdown)
 		});
 };
-var $author$project$Main$jisSchedule = _List_fromArray(
-	[
-		_Utils_Tuple2(
-		_Utils_Tuple2(0, 0),
-		'School hasn\'t started.'),
-		_Utils_Tuple2(
-		_Utils_Tuple2(8, 49),
-		'1st Period'),
-		_Utils_Tuple2(
-		_Utils_Tuple2(9, 36),
-		'Passing Period'),
-		_Utils_Tuple2(
-		_Utils_Tuple2(9, 39),
-		'2nd Period'),
-		_Utils_Tuple2(
-		_Utils_Tuple2(10, 26),
-		'Passing Period'),
-		_Utils_Tuple2(
-		_Utils_Tuple2(10, 29),
-		'3rd Period'),
-		_Utils_Tuple2(
-		_Utils_Tuple2(11, 48),
-		'Passing Period'),
-		_Utils_Tuple2(
-		_Utils_Tuple2(11, 51),
-		'4th Period'),
-		_Utils_Tuple2(
-		_Utils_Tuple2(13, 10),
-		'Passing Period'),
-		_Utils_Tuple2(
-		_Utils_Tuple2(13, 13),
-		'5th Period'),
-		_Utils_Tuple2(
-		_Utils_Tuple2(14, 0),
-		'Passing Period'),
-		_Utils_Tuple2(
-		_Utils_Tuple2(14, 3),
-		'6th Period'),
-		_Utils_Tuple2(
-		_Utils_Tuple2(14, 50),
-		'Passing Period'),
-		_Utils_Tuple2(
-		_Utils_Tuple2(14, 53),
-		'7th Period'),
-		_Utils_Tuple2(
-		_Utils_Tuple2(15, 40),
-		'School\'s Out.')
-	]);
 var $mdgriffith$elm_ui$Internal$Model$OnlyDynamic = F2(
 	function (a, b) {
 		return {$: 'OnlyDynamic', a: a, b: b};
@@ -13187,7 +12927,9 @@ var $mdgriffith$elm_ui$Element$moveUp = function (y) {
 		$mdgriffith$elm_ui$Internal$Flag$moveY,
 		$mdgriffith$elm_ui$Internal$Model$MoveY(-y));
 };
+var $author$project$Main$orangeB = A3($mdgriffith$elm_ui$Element$rgb255, 249, 157, 28);
 var $elm$core$Basics$pi = _Basics_pi;
+var $author$project$Main$pinkA = A3($mdgriffith$elm_ui$Element$rgb255, 204, 0, 204);
 var $mdgriffith$elm_ui$Element$spacingXY = F2(
 	function (x, y) {
 		return A2(
@@ -13461,10 +13203,8 @@ var $mdgriffith$elm_ui$Element$wrappedRow = F2(
 			}
 		}
 	});
-var $author$project$Main$yellow = A3($mdgriffith$elm_ui$Element$rgb255, 255, 242, 0);
+var $author$project$Main$yellowA = A3($mdgriffith$elm_ui$Element$rgb255, 255, 242, 0);
 var $author$project$Main$view = function (model) {
-	var second = $elm$core$String$fromInt(
-		A2($elm$time$Time$toSecond, model.zone, model.time));
 	var removeFocusHilight = {
 		options: _List_fromArray(
 			[
@@ -13473,9 +13213,7 @@ var $author$project$Main$view = function (model) {
 			])
 	};
 	var minuteInt = A2($elm$time$Time$toMinute, model.zone, model.time);
-	var minute = $elm$core$String$fromInt(minuteInt);
 	var hourInt = A2($elm$time$Time$toHour, model.zone, model.time);
-	var hour = $elm$core$String$fromInt(hourInt);
 	var clock = A4(
 		$author$project$Main$currentClock,
 		_List_fromArray(
@@ -13502,14 +13240,7 @@ var $author$project$Main$view = function (model) {
 					{
 						angle: $elm$core$Basics$pi,
 						steps: _List_fromArray(
-							[
-								A3($mdgriffith$elm_ui$Element$rgb255, 97, 49, 129),
-								A3($mdgriffith$elm_ui$Element$rgb255, 56, 28, 74),
-								$author$project$Main$background,
-								$author$project$Main$background,
-								$author$project$Main$background,
-								A3($mdgriffith$elm_ui$Element$rgb255, 33, 17, 45)
-							])
+							[$author$project$Main$purpleI, $author$project$Main$purpleG, $author$project$Main$purpleE, $author$project$Main$purpleE, $author$project$Main$purpleE, $author$project$Main$purpleD])
 					})
 				]),
 			_List_fromArray(
@@ -13540,48 +13271,34 @@ var $author$project$Main$view = function (model) {
 									_List_fromArray(
 										[
 											$author$project$Main$jamfDropdown(model),
-											A4(
+											A2(
 											$author$project$Main$customButton,
-											'🎟️',
-											A3($mdgriffith$elm_ui$Element$rgb255, 249, 157, 28),
 											_List_Nil,
-											_Utils_Tuple2('https://support.marion.k12.in.us/incidents?report_id=9396281', 'Solarwinds')),
-											A4(
+											{color: $author$project$Main$orangeB, icon: '🎟️', label: 'Solarwinds', url: 'https://support.marion.k12.in.us/incidents?report_id=9396281'}),
+											A2(
 											$author$project$Main$customButton,
-											'🍏',
-											A3($mdgriffith$elm_ui$Element$rgb255, 146, 200, 62),
 											_List_Nil,
-											_Utils_Tuple2('https://accounts.google.com/o/saml2/initsso?idpid=C037o58r8&spid=353300859042&forceauthn=false', 'Infinite Campus')),
-											A4(
+											{color: $author$project$Main$greenB, icon: '🍏', label: 'Infinite Campus', url: 'https://accounts.google.com/o/saml2/initsso?idpid=C037o58r8&spid=353300859042&forceauthn=false'}),
+											A2(
 											$author$project$Main$customButton,
-											'📶',
-											A3($mdgriffith$elm_ui$Element$rgb255, 103, 179, 70),
 											_List_Nil,
-											_Utils_Tuple2('https://account.meraki.com/secure/login/dashboard_login', 'Meraki')),
-											A4(
+											{color: $author$project$Main$grayA, icon: '📶', label: 'Meraki', url: 'https://account.meraki.com/secure/login/dashboard_login'}),
+											A2(
 											$author$project$Main$customButton,
-											'🔒',
-											$author$project$Main$white,
 											_List_Nil,
-											_Utils_Tuple2('https://www.securly.com/ssl', 'Securly')),
-											A4(
+											{color: $author$project$Main$white, icon: '🔒', label: 'Securly', url: 'https://www.securly.com/ssl'}),
+											A2(
 											$author$project$Main$customButton,
-											'👥',
-											$author$project$Main$purple,
 											_List_Nil,
-											_Utils_Tuple2('https://teams.microsoft.com/', 'Teams')),
-											A4(
+											{color: $author$project$Main$purpleB, icon: '👥', label: 'Teams', url: 'https://teams.microsoft.com/'}),
+											A2(
 											$author$project$Main$customButton,
-											'🍎',
-											$author$project$Main$white,
 											_List_Nil,
-											_Utils_Tuple2('https://school.apple.com/', 'ASM')),
-											A4(
+											{color: $author$project$Main$white, icon: '🍎', label: 'ASM', url: 'https://school.apple.com/'}),
+											A2(
 											$author$project$Main$customButton,
-											'🔔',
-											$author$project$Main$white,
 											_List_Nil,
-											_Utils_Tuple2('mhs-clock.html', 'MHS Clock'))
+											{color: $author$project$Main$white, icon: '🔔', label: 'MHS Clock', url: 'mhs-clock.html'})
 										])),
 									A3(
 									$author$project$Main$columnGroup,
@@ -13589,42 +13306,30 @@ var $author$project$Main$view = function (model) {
 									_List_Nil,
 									_List_fromArray(
 										[
-											A4(
+											A2(
 											$author$project$Main$customButton,
-											'📧',
-											$author$project$Main$red,
 											_List_Nil,
-											_Utils_Tuple2('https://mail.google.com/mail/u/0/?tab=om', 'Gmail')),
-											A4(
+											{color: $author$project$Main$red, icon: '📧', label: 'Gmail', url: 'https://mail.google.com/mail/u/0/?tab=om'}),
+											A2(
 											$author$project$Main$customButton,
-											'📂',
-											$author$project$Main$yellow,
 											_List_Nil,
-											_Utils_Tuple2('https://drive.google.com/drive/my-drive', 'Drive')),
-											A4(
+											{color: $author$project$Main$yellowA, icon: '📂', label: 'Drive', url: 'https://drive.google.com/drive/my-drive'}),
+											A2(
 											$author$project$Main$customButton,
-											'➗',
-											$author$project$Main$green,
 											_List_Nil,
-											_Utils_Tuple2('https://docs.google.com/spreadsheets/u/0/?tgif=d', 'Sheets')),
-											A4(
+											{color: $author$project$Main$green, icon: '➗', label: 'Sheets', url: 'https://docs.google.com/spreadsheets/u/0/?tgif=d'}),
+											A2(
 											$author$project$Main$customButton,
-											'📽️',
-											$author$project$Main$yellow,
 											_List_Nil,
-											_Utils_Tuple2('https://docs.google.com/presentation/?usp=slides_ald&authuser=0', 'Slides')),
-											A4(
+											{color: $author$project$Main$yellowA, icon: '📽️', label: 'Slides', url: 'https://docs.google.com/presentation/?usp=slides_ald&authuser=0'}),
+											A2(
 											$author$project$Main$customButton,
-											'📝',
-											$author$project$Main$blue,
 											_List_Nil,
-											_Utils_Tuple2('https://docs.google.com/document/?usp=docs_ald&authuser=0', 'Docs')),
-											A4(
+											{color: $author$project$Main$blue, icon: '📝', label: 'Docs', url: 'https://docs.google.com/document/?usp=docs_ald&authuser=0'}),
+											A2(
 											$author$project$Main$customButton,
-											'📃',
-											$author$project$Main$purple,
 											_List_Nil,
-											_Utils_Tuple2('https://docs.google.com/forms/u/0/?tgif=d', 'Forms'))
+											{color: $author$project$Main$purpleB, icon: '📃', label: 'Forms', url: 'https://docs.google.com/forms/u/0/?tgif=d'})
 										])),
 									A3(
 									$author$project$Main$columnGroup,
@@ -13632,42 +13337,30 @@ var $author$project$Main$view = function (model) {
 									_List_Nil,
 									_List_fromArray(
 										[
-											A4(
+											A2(
 											$author$project$Main$customButton,
-											'🗓️',
-											$author$project$Main$blue,
 											_List_Nil,
-											_Utils_Tuple2('https://calendar.google.com', 'Calendar')),
-											A4(
+											{color: $author$project$Main$blue, icon: '🗓️', label: 'Calendar', url: 'https://calendar.google.com'}),
+											A2(
 											$author$project$Main$customButton,
-											'🖥️',
-											$author$project$Main$blue,
 											_List_Nil,
-											_Utils_Tuple2('https://remotedesktop.google.com', 'Remote Desktop')),
-											A4(
+											{color: $author$project$Main$blue, icon: '🖥️', label: 'Remote Desktop', url: 'https://remotedesktop.google.com'}),
+											A2(
 											$author$project$Main$customButton,
-											'</>',
-											$author$project$Main$green,
 											_List_Nil,
-											_Utils_Tuple2('https://script.google.com/home', 'Google Scripts')),
-											A4(
+											{color: $author$project$Main$green, icon: '</>', label: 'Google Scripts', url: 'https://script.google.com/home'}),
+											A2(
 											$author$project$Main$customButton,
-											'📒',
-											$author$project$Main$yellow,
 											_List_Nil,
-											_Utils_Tuple2('https://keep.google.com/', 'Keep')),
-											A4(
+											{color: $author$project$Main$yellowA, icon: '📒', label: 'Keep', url: 'https://keep.google.com/'}),
+											A2(
 											$author$project$Main$customButton,
-											'📺',
-											$author$project$Main$red,
 											_List_Nil,
-											_Utils_Tuple2('https://youtube.com', 'Youtube')),
-											A4(
+											{color: $author$project$Main$red, icon: '📺', label: 'Youtube', url: 'https://youtube.com'}),
+											A2(
 											$author$project$Main$customButton,
-											'🏫',
-											$author$project$Main$green,
 											_List_Nil,
-											_Utils_Tuple2('https://classroom.google.com/', 'Google Classroom'))
+											{color: $author$project$Main$green, icon: '🏫', label: 'Google Classroom', url: 'https://classroom.google.com/'})
 										])),
 									A3(
 									$author$project$Main$columnGroup,
@@ -13675,48 +13368,34 @@ var $author$project$Main$view = function (model) {
 									_List_Nil,
 									_List_fromArray(
 										[
-											A4(
+											A2(
 											$author$project$Main$customButton,
-											'🛠️',
-											A3($mdgriffith$elm_ui$Element$rgb255, 0, 200, 200),
 											_List_Nil,
-											_Utils_Tuple2('https://docs.google.com/spreadsheets/d/1eR5jT0WqYa3QhXodBLpjA0VhBHE4b_aXS9acDqj9tz4/edit#gid=1457413583', 'L.B.S. iPads')),
-											A4(
+											{color: $author$project$Main$blueB, icon: '🛠️', label: 'L.B.S. iPads', url: 'https://docs.google.com/spreadsheets/d/1eR5jT0WqYa3QhXodBLpjA0VhBHE4b_aXS9acDqj9tz4/edit#gid=1457413583'}),
+											A2(
 											$author$project$Main$customButton,
-											'⌨️',
-											$author$project$Main$blue,
 											_List_Nil,
-											_Utils_Tuple2('https://docs.google.com/spreadsheets/d/1vp43gVCC-6WoMuGinl4baBUmCjG4-qhhhZMw5i-xuIk/edit#gid=0', 'KB Checkout')),
-											A4(
+											{color: $author$project$Main$blue, icon: '⌨️', label: 'KB Checkout', url: 'https://docs.google.com/spreadsheets/d/1vp43gVCC-6WoMuGinl4baBUmCjG4-qhhhZMw5i-xuIk/edit#gid=0'}),
+											A2(
 											$author$project$Main$customButton,
-											'🥃',
-											A3($mdgriffith$elm_ui$Element$rgb255, 0, 200, 200),
 											_List_Nil,
-											_Utils_Tuple2('https://docs.google.com/spreadsheets/d/1KHvbmQZ7aUxzDbpBcPhbZ8BimZQm05YLRdIGoSVvDt8/edit#gid=0', 'Screen Protectors')),
-											A4(
+											{color: $author$project$Main$blueB, icon: '🥃', label: 'Screen Protectors', url: 'https://docs.google.com/spreadsheets/d/1KHvbmQZ7aUxzDbpBcPhbZ8BimZQm05YLRdIGoSVvDt8/edit#gid=0'}),
+											A2(
 											$author$project$Main$customButton,
-											'🏃',
-											A3($mdgriffith$elm_ui$Element$rgb255, 0, 73, 137),
 											_List_Nil,
-											_Utils_Tuple2('https://docs.google.com/spreadsheets/d/1G6EJ6A0LPHP9ye4N1Qa_wiCj9E3f7aknsgNzPQXeG2Y/edit#gid=0', 'Withdrawn iPads')),
-											A4(
+											{color: $author$project$Main$blueC, icon: '🏃', label: 'Withdrawn iPads', url: 'https://docs.google.com/spreadsheets/d/1G6EJ6A0LPHP9ye4N1Qa_wiCj9E3f7aknsgNzPQXeG2Y/edit#gid=0'}),
+											A2(
 											$author$project$Main$customButton,
-											'👩\u200D🏫',
-											$author$project$Main$green,
 											_List_Nil,
-											_Utils_Tuple2('https://docs.google.com/spreadsheets/d/1d8vVclm602vq12eQ83aVjDwE9Z7FtF_a4EmG08KsTGQ/edit#gid=1857222876', 'Staff Inventory')),
-											A4(
+											{color: $author$project$Main$green, icon: '👩\u200D🏫', label: 'Staff Inventory', url: 'https://docs.google.com/spreadsheets/d/1d8vVclm602vq12eQ83aVjDwE9Z7FtF_a4EmG08KsTGQ/edit#gid=1857222876'}),
+											A2(
 											$author$project$Main$customButton,
-											'🏷️',
-											$author$project$Main$yellow,
 											_List_Nil,
-											_Utils_Tuple2('https://docs.google.com/presentation/d/1zQhHW05YwcCznDsoxbjssJypojGI9DlhqHF2ZQoCm6s/edit#slide=id.p', 'Label Template')),
-											A4(
+											{color: $author$project$Main$yellowA, icon: '🏷️', label: 'Label Template', url: 'https://docs.google.com/presentation/d/1zQhHW05YwcCznDsoxbjssJypojGI9DlhqHF2ZQoCm6s/edit#slide=id.p'}),
+											A2(
 											$author$project$Main$customButton,
-											'📊',
-											$author$project$Main$purple,
 											_List_Nil,
-											_Utils_Tuple2('https://sites.google.com/marion.k12.in.us/mcs-data-dashboard/home', 'Data Dashboard'))
+											{color: $author$project$Main$purpleB, icon: '📊', label: 'Data Dashboard', url: 'https://sites.google.com/marion.k12.in.us/mcs-data-dashboard/home'})
 										])),
 									A3(
 									$author$project$Main$columnGroup,
@@ -13724,54 +13403,57 @@ var $author$project$Main$view = function (model) {
 									_List_Nil,
 									_List_fromArray(
 										[
-											A4(
+											A2(
 											$author$project$Main$customButton,
-											'📦',
-											A3($mdgriffith$elm_ui$Element$rgb255, 153, 102, 51),
 											_List_Nil,
-											_Utils_Tuple2('https://docs.google.com/spreadsheets/d/1FM27wzKeo3SxlDUCxCxZGv6koTjjj_pLzu758c_idU4/edit#gid=0', 'Box Sorter')),
-											A4(
+											{color: $author$project$Main$brownA, icon: '📦', label: 'Box Sorter', url: 'https://docs.google.com/spreadsheets/d/1FM27wzKeo3SxlDUCxCxZGv6koTjjj_pLzu758c_idU4/edit#gid=0'}),
+											A2(
 											$author$project$Main$customButton,
-											'📃',
-											A3($mdgriffith$elm_ui$Element$rgb255, 2, 84, 204),
 											_List_Nil,
-											_Utils_Tuple2('https://trello.com/b/DhCrKPFp/autoloader', 'Trello')),
-											A4(
+											{color: $author$project$Main$blueD, icon: '📃', label: 'Trello', url: 'https://trello.com/b/DhCrKPFp/autoloader'}),
+											A2(
 											$author$project$Main$customButton,
-											'{ / }',
-											$author$project$Main$green,
 											_List_Nil,
-											_Utils_Tuple2('https://github.com/', 'GitHub')),
-											A4(
+											{color: $author$project$Main$green, icon: '{ / }', label: 'GitHub', url: 'https://github.com/'}),
+											A2(
 											$author$project$Main$customButton,
-											'\uD83E\uDE9F',
-											A3($mdgriffith$elm_ui$Element$rgb255, 0, 122, 204),
 											_List_Nil,
-											_Utils_Tuple2('https://vscode.dev', 'VS Code')),
-											A4(
+											{color: $author$project$Main$blueA, icon: '\uD83E\uDE9F', label: 'VS Code', url: 'https://vscode.dev'}),
+											A2(
 											$author$project$Main$customButton,
-											'🎨',
-											$author$project$Main$green,
 											_List_Nil,
-											_Utils_Tuple2('https://www.w3schools.com/colors/colors_picker.asp', 'W3 Color Picker')),
-											A4(
+											{color: $author$project$Main$green, icon: '🎨', label: 'W3 Color Picker', url: 'https://www.w3schools.com/colors/colors_picker.asp'}),
+											A2(
 											$author$project$Main$customButton,
-											'✏️',
-											A3($mdgriffith$elm_ui$Element$rgb255, 0, 200, 200),
 											_List_Nil,
-											_Utils_Tuple2('https://app.diagrams.net/', 'Draw.io')),
-											A4(
+											{color: $author$project$Main$blueB, icon: '✏️', label: 'Draw.io', url: 'https://app.diagrams.net/'}),
+											A2(
 											$author$project$Main$customButton,
-											'📖',
-											$author$project$Main$blue,
 											_List_Nil,
-											_Utils_Tuple2('https://package.elm-lang.org/packages/mdgriffith/elm-ui/latest/', 'Elm-ui')),
-											A4(
+											{color: $author$project$Main$blue, icon: '📖', label: 'Elm-ui', url: 'https://package.elm-lang.org/packages/mdgriffith/elm-ui/latest/'}),
+											A2(
 											$author$project$Main$customButton,
-											'✍',
-											A3($mdgriffith$elm_ui$Element$rgb255, 204, 0, 204),
 											_List_Nil,
-											_Utils_Tuple2('https://www.photopea.com/', 'Photopea'))
+											{color: $author$project$Main$pinkA, icon: '✍', label: 'Photopea', url: 'https://www.photopea.com/'})
+										])),
+									A3(
+									$author$project$Main$columnGroup,
+									'Student Portals',
+									_List_Nil,
+									_List_fromArray(
+										[
+											A2(
+											$author$project$Main$customButton,
+											_List_Nil,
+											{color: $author$project$Main$blueA, icon: '🧠', label: 'Clever', url: 'https://clever.com/in/marioncommunityschools/teacher'}),
+											A2(
+											$author$project$Main$customButton,
+											_List_Nil,
+											{color: $author$project$Main$greenB, icon: '👩🏽\u200D🤝\u200D👩🏻', label: 'IC Parent Portal', url: 'https://marionin.infinitecampus.org/campus/portal/parents/marion.jsp'}),
+											A2(
+											$author$project$Main$customButton,
+											_List_Nil,
+											{color: $author$project$Main$greenB, icon: '👩\u200D🎓', label: 'IC Student Portal', url: 'https://marionin.infinitecampus.org/campus/portal/students/marion.jsp'})
 										])),
 									A3(
 									$author$project$Main$columnGroup,
@@ -13779,36 +13461,18 @@ var $author$project$Main$view = function (model) {
 									_List_Nil,
 									_List_fromArray(
 										[
-											A4(
+											A2(
 											$author$project$Main$customButton,
-											'🏫',
-											A3($mdgriffith$elm_ui$Element$rgb255, 0, 200, 200),
 											_List_Nil,
-											_Utils_Tuple2('https://www.marion.k12.in.us/', 'MCS Website')),
-											A4(
+											{color: $author$project$Main$blueB, icon: '🏫', label: 'MCS Website', url: 'https://www.marion.k12.in.us/'}),
+											A2(
 											$author$project$Main$customButton,
-											'👩🏽\u200D🤝\u200D👩🏻',
-											A3($mdgriffith$elm_ui$Element$rgb255, 0, 200, 200),
 											_List_Nil,
-											_Utils_Tuple2('https://marionin.infinitecampus.org/campus/portal/parents/marion.jsp', 'IC Parent Portal')),
-											A4(
+											{color: $author$project$Main$blueC, icon: '🕝', label: 'Timeclock +', url: 'https://310859.tcplusondemand.com/app/webclock/#/EmployeeLogOn/310859'}),
+											A2(
 											$author$project$Main$customButton,
-											'👩\u200D🎓',
-											A3($mdgriffith$elm_ui$Element$rgb255, 0, 200, 200),
 											_List_Nil,
-											_Utils_Tuple2('https://marionin.infinitecampus.org/campus/portal/students/marion.jsp', 'IC Student Portal')),
-											A4(
-											$author$project$Main$customButton,
-											'🕝',
-											A3($mdgriffith$elm_ui$Element$rgb255, 0, 73, 137),
-											_List_Nil,
-											_Utils_Tuple2('https://310859.tcplusondemand.com/app/webclock/#/EmployeeLogOn/310859', 'Timeclock +')),
-											A4(
-											$author$project$Main$customButton,
-											'💵',
-											A3($mdgriffith$elm_ui$Element$rgb255, 0, 200, 200),
-											_List_Nil,
-											_Utils_Tuple2('https://marion.k12-portal.in/login.php', 'Paystubs'))
+											{color: $author$project$Main$blueB, icon: '💵', label: 'Paystubs', url: 'https://marion.k12-portal.in/login.php'})
 										])),
 									$author$project$Main$gradYearColumn,
 									A3(
@@ -13820,12 +13484,11 @@ var $author$project$Main$view = function (model) {
 										function (_v0) {
 											var title = _v0.a;
 											var schedule = _v0.b;
-											return A6($author$project$Main$component, title, schedule, hourInt, minuteInt, model.zone, model.time);
+											return A4($author$project$Main$component, title, schedule, hourInt, minuteInt);
 										},
 										_List_fromArray(
 											[
 												_Utils_Tuple2('MHS', $author$project$Main$mhsSchedule),
-												_Utils_Tuple2('JIS', $author$project$Main$jisSchedule),
 												_Utils_Tuple2('MJH', $author$project$Main$mjhSchedule)
 											])))
 								]))
