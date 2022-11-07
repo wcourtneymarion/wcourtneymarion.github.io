@@ -12867,60 +12867,6 @@ var $mdgriffith$elm_ui$Element$layoutWith = F3(
 				_Utils_ap($mdgriffith$elm_ui$Internal$Model$rootStyle, attrs)),
 			child);
 	});
-var $author$project$Main$mjhSchedule = _List_fromArray(
-	[
-		_Utils_Tuple2(
-		_Utils_Tuple2(0, 0),
-		'School hasn\'t started.'),
-		_Utils_Tuple2(
-		_Utils_Tuple2(8, 49),
-		'1st Period'),
-		_Utils_Tuple2(
-		_Utils_Tuple2(9, 20),
-		'Passing Period'),
-		_Utils_Tuple2(
-		_Utils_Tuple2(9, 23),
-		'2nd Period'),
-		_Utils_Tuple2(
-		_Utils_Tuple2(10, 6),
-		'Passing Period'),
-		_Utils_Tuple2(
-		_Utils_Tuple2(10, 9),
-		'3rd Period'),
-		_Utils_Tuple2(
-		_Utils_Tuple2(10, 52),
-		'Passing Period'),
-		_Utils_Tuple2(
-		_Utils_Tuple2(10, 55),
-		'4th Period Lunch A'),
-		_Utils_Tuple2(
-		_Utils_Tuple2(11, 38),
-		'Passing Period'),
-		_Utils_Tuple2(
-		_Utils_Tuple2(11, 41),
-		'4th Period Lunch B'),
-		_Utils_Tuple2(
-		_Utils_Tuple2(13, 22),
-		'Passing Period'),
-		_Utils_Tuple2(
-		_Utils_Tuple2(13, 25),
-		'4th Period Lunch C'),
-		_Utils_Tuple2(
-		_Utils_Tuple2(14, 8),
-		'Passing Period'),
-		_Utils_Tuple2(
-		_Utils_Tuple2(14, 11),
-		'5th Period'),
-		_Utils_Tuple2(
-		_Utils_Tuple2(14, 54),
-		'Passing Period'),
-		_Utils_Tuple2(
-		_Utils_Tuple2(14, 57),
-		'6th Period'),
-		_Utils_Tuple2(
-		_Utils_Tuple2(15, 40),
-		'School\'s Out.')
-	]);
 var $mdgriffith$elm_ui$Element$moveUp = function (y) {
 	return A2(
 		$mdgriffith$elm_ui$Internal$Model$TransformComponent,
@@ -13278,6 +13224,15 @@ var $author$project$Main$view = function (model) {
 											A2(
 											$author$project$Main$customButton,
 											_List_Nil,
+											{
+												color: A3($mdgriffith$elm_ui$Element$rgb255, 61, 91, 152),
+												icon: '🎫',
+												label: 'Incident IQ',
+												url: 'https://marioncommunityschools.incidentiq.com/logout?referrer=%2Fagent%2Fonboarding%2Fstatus'
+											}),
+											A2(
+											$author$project$Main$customButton,
+											_List_Nil,
 											{color: $author$project$Main$greenB, icon: '🍏', label: 'Infinite Campus', url: 'https://accounts.google.com/o/saml2/initsso?idpid=C037o58r8&spid=353300859042&forceauthn=false'}),
 											A2(
 											$author$project$Main$customButton,
@@ -13379,6 +13334,24 @@ var $author$project$Main$view = function (model) {
 											A2(
 											$author$project$Main$customButton,
 											_List_Nil,
+											{
+												color: A3($mdgriffith$elm_ui$Element$rgb255, 102, 204, 255),
+												icon: '📜',
+												label: 'License Reclaim',
+												url: 'https://docs.google.com/spreadsheets/d/1kfnLWXHyNsK8Wld_V0QgB6hUpdEO254IGKwMFIOMlrI/edit#gid=0'
+											}),
+											A2(
+											$author$project$Main$customButton,
+											_List_Nil,
+											{
+												color: A3($mdgriffith$elm_ui$Element$rgb255, 102, 204, 255),
+												icon: '📩',
+												label: 'Apple Email Data',
+												url: 'https://docs.google.com/spreadsheets/d/1RURMy0InlA1olMFZ84nSdlZbs3UdZ8gIB13HzxtsONo/edit#gid=1684644869'
+											}),
+											A2(
+											$author$project$Main$customButton,
+											_List_Nil,
 											{color: $author$project$Main$blueB, icon: '🥃', label: 'Screen Protectors', url: 'https://docs.google.com/spreadsheets/d/1KHvbmQZ7aUxzDbpBcPhbZ8BimZQm05YLRdIGoSVvDt8/edit#gid=0'}),
 											A2(
 											$author$project$Main$customButton,
@@ -13411,6 +13384,10 @@ var $author$project$Main$view = function (model) {
 											$author$project$Main$customButton,
 											_List_Nil,
 											{color: $author$project$Main$blueD, icon: '📃', label: 'Trello', url: 'https://trello.com/b/DhCrKPFp/autoloader'}),
+											A2(
+											$author$project$Main$customButton,
+											_List_Nil,
+											{color: $author$project$Main$blueD, icon: '🔍', label: 'Venn Listogram', url: 'https://wesleycourtney.com/venn-listogram'}),
 											A2(
 											$author$project$Main$customButton,
 											_List_Nil,
@@ -13453,7 +13430,11 @@ var $author$project$Main$view = function (model) {
 											A2(
 											$author$project$Main$customButton,
 											_List_Nil,
-											{color: $author$project$Main$greenB, icon: '👩\u200D🎓', label: 'IC Student Portal', url: 'https://marionin.infinitecampus.org/campus/portal/students/marion.jsp'})
+											{color: $author$project$Main$greenB, icon: '👩\u200D🎓', label: 'IC Student Portal', url: 'https://marionin.infinitecampus.org/campus/portal/students/marion.jsp'}),
+											A2(
+											$author$project$Main$customButton,
+											_List_Nil,
+											{color: $author$project$Main$greenB, icon: '👩‍🏫', label: 'Edmentum', url: 'https://www.edmentum.com/product-login'})
 										])),
 									A3(
 									$author$project$Main$columnGroup,
@@ -13472,7 +13453,16 @@ var $author$project$Main$view = function (model) {
 											A2(
 											$author$project$Main$customButton,
 											_List_Nil,
-											{color: $author$project$Main$blueB, icon: '💵', label: 'Paystubs', url: 'https://marion.k12-portal.in/login.php'})
+											{color: $author$project$Main$blueB, icon: '💵', label: 'Paystubs', url: 'https://marion.k12-portal.in/login.php'}),
+											A2(
+											$author$project$Main$customButton,
+											_List_Nil,
+											{
+												color: A3($mdgriffith$elm_ui$Element$rgb255, 6, 60, 140),
+												icon: '🦺',
+												label: 'Vector Training',
+												url: 'https://marion-in.safeschools.com/training/home'
+											})
 										])),
 									$author$project$Main$gradYearColumn,
 									A3(
@@ -13488,8 +13478,7 @@ var $author$project$Main$view = function (model) {
 										},
 										_List_fromArray(
 											[
-												_Utils_Tuple2('MHS', $author$project$Main$mhsSchedule),
-												_Utils_Tuple2('MJH', $author$project$Main$mjhSchedule)
+												_Utils_Tuple2('MHS', $author$project$Main$mhsSchedule)
 											])))
 								]))
 						]))
